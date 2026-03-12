@@ -1,0 +1,522 @@
+invoice_id,invoice_date,supplier,product,category,quantity,unit_price,total_amount
+INV-1001,2024-01-01,FreshFarm Produce,Tomatoes,Vegetables,21,2.6,54.6
+INV-1002,2024-01-01,FreshFarm Produce,Onions,Vegetables,35,1.89,66.15
+INV-1003,2024-01-01,FreshFarm Produce,Lettuce,Vegetables,67,2.19,146.73
+INV-1004,2024-01-01,FreshFarm Produce,Cucumbers,Vegetables,67,2.06,138.02
+INV-1005,2024-01-01,Desert Meat Co,Chicken Breast,Meat,12,19.23,230.76
+INV-1006,2024-01-01,Desert Meat Co,Beef Tenderloin,Meat,11,,546.48
+INV-1007,2024-01-01,Desert Meat Co,Lamb Chops,Meat,16,40.88,654.08
+INV-1008,2024-01-01,Desert Meat Co,Minced Beef,Meat,29,23.89,692.81
+INV-1009,2024-01-01,Red Sea Seafood,Salmon Fillet,Seafood,14,53.51,749.14
+INV-1010,2024-01-01,Red Sea Seafood,Prawns,Seafood,30,39.85,1195.5
+INV-1011,2024-01-01,Red Sea Seafood,Sea Bass,Seafood,15,45.32,679.8
+INV-1012,2024-01-01,Red Sea Seafood,Calamari,Seafood,16,30.58,489.28
+INV-1013,2024-01-01,Fresh Farm Produce,Milk,Dairy,15,6.88,103.2
+INV-1014,2024-01-01,Gulf Dairy,Yogurt,Dairy,25,4.42,110.5
+INV-1015,2024-01-01,Gulf Dairy,Cream,Dairy,36,8.9,320.4
+INV-1016,2024-01-01,Gulf Dairy,Cheddar Cheese,Dairy,28,16.01,448.28
+INV-1017,2024-01-01,Oasis Beverage Supply,Sparkling Water,Beverages,67,3.23,216.41
+INV-1018,2024-01-01,Oasis Beverage Supply,Orange Juice,Beverages,72,5.4,388.8
+INV-1019,2024-01-01,Oasis Beverage Supply,Apple Juice,Beverages,68,5.1,346.8
+INV-1020,2024-01-01,Oasis Beverage Supply,Tonic Water,Beverages,29,4.15,120.35
+INV-1021,2024-01-08,FreshFarm Produce,Tomatoes,Vegetables,54,2.73,147.42
+INV-1022,2024-01-08,FreshFarm Produce,Onions,Vegetables,79,1.86,146.94
+INV-1023,2024-01-08,FreshFarm Produce,Lettuce,Vegetables,55,2.22,122.1
+INV-1024,2024-01-08,FreshFarm Produce,Cucumbers,Vegetables,60,2.06,123.6
+INV-1025,2024-01-08,Desert Meat Co,Chicken Breast,Meat,37,19.96,738.52
+INV-1026,2024-01-08,Desert Meat Co,Beef Tenderloin,Meat,16,50.17,802.72
+INV-1027,2024-01-08,Desert Meat Co,Lamb Chops,Meat,11,42.82,471.02
+INV-1028,2024-01-08,Desert Meat Co,Minced Beef,Meat,34,24.91,846.94
+INV-1029,2024-01-08,Red Sea Seafood,Salmon Fillet,Seafood,10,53.61,536.1
+INV-1030,2024-01-08,Red Sea Seafood,Prawns,Seafood,11,42.4,466.4
+INV-1031,2024-01-08,Red Sea Seafood,Sea Bass,Seafood,22,45.86,1008.92
+INV-1032,2024-01-08,Red Sea Seafood,Calamari,Seafood,19,31.8,604.2
+INV-1033,2024-01-08,Gulf Dairy,Milk,Dairy,37,6.8,251.6
+INV-1034,2024-01-08,Gulf Dairy,Yogurt,Dairy,32,4.39,140.48
+INV-1035,2024-01-08,Gulf Dairy,Cream,Dairy,19,9.32,177.08
+INV-1036,2024-01-08,Gulf Dairy,Cheddar Cheese,Dairy,25,16.6,415.0
+INV-1037,2024-01-08,Oasis Beverage Supply,Sparkling Water,Beverages,55,3.32,182.6
+INV-1038,2024-01-08,Oasis Beverage Supply,Orange Juice,Beverages,72,5.34,384.48
+INV-1039,2024-01-08,Oasis Beverage Supply,Apple Juice,Beverages,95,5.1,484.5
+INV-1040,2024-01-08,Oasis Beverage Supply,Tonic Water,Beverages,65,4.13,268.45
+INV-1041,2024-01-15,FreshFarm Produce,Tomatoes,Vegetables,69,2.9,200.1
+INV-1042,2024-01-15,FreshFarm Produce,Onions,Vegetables,72,1.82,131.04
+INV-1043,2024-01-15,FreshFarm Produce,Lettuce,Vegetables,40,2.16,86.4
+INV-1044,2024-01-15,FreshFarm Produce,Cucumbers,Vegetables,24,2.09,50.16
+INV-1045,2024-01-15,Desert Meat Co,Chicken Breast,Meat,40,19.82,792.8
+INV-1046,2024-01-15,Desert Meat Co,Beef Tenderloin,Meat,32,51.79,1657.28
+INV-1047,2024-01-15,Desert Meat Co,Lamb Chops,Meat,30,43.02,1290.6
+INV-1048,2024-01-15,Desert Meat Co,Minced Beef,Meat,38,25.53,970.14
+INV-1049,2024-01-15,Red Sea Seafood,Salmon Fillet,Seafood,22,57.39,1262.58
+INV-1050,2024-01-15,Red Sea Seafood,Prawns,Seafood,12,41.79,501.48
+INV-1051,2024-01-15,Red Sea Seafood,Sea Bass,Seafood,25,45.73,1143.25
+INV-1052,2024-01-15,Red Sea Seafood,Calamari,Seafood,26,32.73,850.98
+INV-1053,2024-01-15,Gulf Dairy,Milk,Dairy,40,6.92,276.8
+INV-1054,2024-01-15,Gulf Dairy,Yogurt,Dairy,23,4.43,101.89
+INV-1055,2024-01-15,Gulf Dairy,Cream,Dairy,20,9.56,191.2
+INV-1056,2024-01-15,Gulf Dairy,Cheddar Cheese,Dairy,22,17.48,384.56
+INV-1057,2024-01-15,Oasis Beverage Supply,Sparkling Water,Beverages,44,3.28,144.32
+INV-1058,2024-01-15,Oasis Beverage Supply,Orange Juice,Beverages,78,5.65,440.7
+INV-1059,2024-01-15,Oasis Beverage Supply,Apple Juice,Beverages,73,5.28,385.44
+INV-1060,2024-01-15,Oasis Beverage Supply,Tonic Water,Beverages,83,4.18,346.94
+INV-1061,2024-01-22,FreshFarm Produce,Tomatoes,Vegetables,55,2.98,163.9
+INV-1062,2024-01-22,FreshFarm Produce,Onions,Vegetables,20,1.94,38.8
+INV-1063,2024-01-22,FreshFarm Produce,Lettuce,Vegetables,27,2.26,61.02
+INV-1064,2024-01-22,FreshFarm Produce,Cucumbers,Vegetables,54,2.18,117.72
+INV-1065,2024-01-22,Desert Meat Co,Chicken Breast,Meat,34,20.86,709.24
+INV-1066,2024-01-22,Desert Meat Co,Beef Tenderloin,Meat,13,53.89,700.57
+INV-1067,2024-01-22,Desert Meat Co,Lamb Chops,Meat,15,43.12,646.8
+INV-1068,2024-01-22,Desert Meat Co,Minced Beef,Meat,40,26.04,1041.6
+INV-1069,2024-01-22,Red Sea Seafood,Salmon Fillet,Seafood,16,60.23,963.68
+INV-1070,2024-01-22,Red Sea Seafood,Prawns,Seafood,13,45.0,585.0
+INV-1071,2024-01-22,Red Sea Seafood,Sea Bass,Seafood,11,46.91,516.01
+INV-1072,2024-01-22,Red Sea Seafood,Calamari,Seafood,17,34.88,592.96
+INV-1073,2024-01-22,Gulf Dairy,Milk,Dairy,47,7.35,345.45
+INV-1074,2024-01-22,Gulf Dairy,Yogurt,Dairy,24,4.59,110.16
+INV-1075,2024-01-22,Gulf Dairy,Cream,Dairy,25,9.67,241.75
+INV-1076,2024-01-22,Gulf Dairy,Cheddar Cheese,Dairy,48,17.99,863.52
+INV-1077,2024-01-22,Oasis Beverage Supply,Sparkling Water,Beverages,100,3.51,351.0
+INV-1078,2024-01-22,Oasis Beverage Supply,Orange Juice,Beverages,26,5.68,147.68
+INV-1079,2024-01-22,Oasis Beverage Supply,Apple Juice,Beverages,70,5.19,363.3
+INV-1080,2024-01-22,Oasis Beverage Supply,Tonic Water,Beverages,63,4.46,280.98
+INV-1081,2024-01-29,FreshFarm Produce,Tomatoes,Vegetables,35,2.97,103.95
+INV-1082,2024-01-29,FreshFarm Produce,Onions,Vegetables,80,2.07,165.6
+INV-1083,2024-01-29,FreshFarm Produce,Lettuce,Vegetables,66,2.21,145.86
+INV-1084,2024-01-29,FreshFarm Produce,Cucumbers,Vegetables,24,2.23,53.52
+INV-1085,2024-01-29,Desert Meat Co,Chicken Breast,Meat,27,22.48,606.96
+INV-1086,2024-01-29,Desert Meat Co,Beef Tenderloin,Meat,14,56.81,795.34
+INV-1087,2024-01-29,Desert Meat Co,Lamb Chops,Meat,40,44.96,1798.4
+INV-1088,2024-01-29,Desert Meat Co,Minced Beef,Meat,18,26.83,482.94
+INV-1089,2024-01-29,Red Sea Seafood,Salmon Fillet,Seafood,27,61.92,1671.84
+INV-1090,2024-01-29,Red Sea Seafood,Prawns,Seafood,14,45.74,640.36
+INV-1091,2024-01-29,Red Sea Seafood,Sea Bass,Seafood,30,50.3,1509.0
+INV-1092,2024-01-29,Red Sea Seafood,Calamari,Seafood,17,34.61,588.37
+INV-1093,2024-01-29,Gulf Dairy,Milk,Dairy,38,7.45,283.1
+INV-1094,2024-01-29,Gulf Dairy,Yogurt,Dairy,48,4.67,224.16
+INV-1095,2024-01-29,Gulf Dairy,Cream,Dairy,30,9.86,295.8
+INV-1096,2024-01-29,Gulf Dairy,Cheddar Cheese,Dairy,36,17.89,644.04
+INV-1097,2024-01-29,Oasis Beverage Supply,Sparkling Water,Beverages,94,3.41,320.54
+INV-1098,2024-01-29,Oasis Beverage Supply,Orange Juice,Beverages,52,5.65,293.8
+INV-1099,2024-01-29,Oasis Beverage Supply,Apple Juice,Beverages,31,5.04,156.24
+INV-1100,2024-01-29,Oasis Beverage Supply,Tonic Water,Beverages,28,4.44,124.32
+INV-1101,2024-02-05,FreshFarm Produce,Tomatoes,Vegetables,24,3.16,75.84
+INV-1102,2024-02-05,FreshFarm Produce,Onions,Vegetables,37,2.12,78.44
+INV-1103,2024-02-05,FreshFarm Produce,Lettuce,Vegetables,33,2.31,76.23
+INV-1104,2024-02-05,FreshFarm Produce,Cucumbers,Vegetables,66,2.3,151.8
+INV-1105,2024-02-05,Desert Meat Co,Chicken Breast,Meat,28,24.12,675.36
+INV-1106,2024-02-05,Desert Meat Co,Beef Tenderloin,Meat,17,58.71,998.07
+INV-1107,2024-02-05,Desert Meat Co,Lamb Chops,Meat,35,47.49,1662.15
+INV-1108,2024-02-05,Desert Meat Co,Minced Beef,Meat,13,27.23,353.99
+INV-1109,2024-02-05,Red Sea Seafood,Salmon Fillet,Seafood,21,60.72,1275.12
+INV-1110,2024-02-05,Red Sea Seafood,Prawns,Seafood,21,46.15,969.15
+INV-1111,2024-02-05,Red Sea Seafood,Sea Bass,Seafood,9,51.38,462.42
+INV-1112,2024-02-05,Red Sea Seafood,Calamari,Seafood,28,36.14,1011.92
+INV-1113,2024-02-05,Gulf Dairy,Milk,Dairy,40,7.31,292.4
+INV-1114,2024-02-05,Gulf Dairy,Yogurt,Dairy,21,4.9,102.9
+INV-1115,2024-02-05,Gulf Dairy,Cream,Dairy,27,9.83,265.41
+INV-1116,2024-02-05,Gulf Dairy,Cheddar Cheese,Dairy,23,18.41,423.43
+INV-1117,2024-02-05,Oasis Beverage Supply,Sparkling Water,Beverages,59,3.47,204.73
+INV-1118,2024-02-05,Oasis Beverage Supply,Orange Juice,Beverages,33,5.77,190.41
+INV-1119,2024-02-05,Oasis Beverage Supply,Apple Juice,Beverages,94,5.13,482.22
+INV-1120,2024-02-05,Oasis Beverage Supply,Tonic Water,Beverages,93,4.35,404.55
+INV-1121,2024-02-12,FreshFarm Produce,Tomatoes,Vegetables,25,3.36,84.0
+INV-1122,2024-02-12,FreshFarm Produce,Onions,Vegetables,74,2.27,167.98
+INV-1123,2024-02-12,FreshFarm Produce,Lettuce,Vegetables,46,2.3,105.8
+INV-1124,2024-02-12,FreshFarm Produce,Cucumbers,Vegetables,33,2.35,77.55
+INV-1125,2024-02-12,Desert Meat Co,Chicken Breast,Meat,38,25.69,976.22
+INV-1126,2024-02-12,Desert Meat Co,Beef Tenderloin,Meat,22,57.33,1261.26
+INV-1127,2024-02-12,Desert Meat Co,Lamb Chops,Meat,22,46.08,1013.76
+INV-1128,2024-02-12,Desert Meat Co,Minced Beef,Meat,35,27.21,952.35
+INV-1129,2024-02-12,Red Sea Seafood,Salmon Fillet,Seafood,17,64.14,1090.38
+INV-1130,2024-02-12,Red Sea Seafood,Prawns,Seafood,25,46.91,1172.75
+INV-1131,2024-02-12,Red Sea Seafood,Sea Bass,Seafood,23,53.58,1232.34
+INV-1132,2024-02-12,Red Sea Seafood,Calamari,Seafood,17,35.67,606.39
+INV-1133,2024-02-12,Gulf Dairy,Milk,Dairy,18,7.27,130.86
+INV-1134,2024-02-12,Gulf Dairy,Yogurt,Dairy,49,5.07,248.43
+INV-1135,2024-02-12,Gulf Dairy,Cream,Dairy,35,9.6,336.0
+INV-1136,2024-02-12,Gulf Dairy,Cheddar Cheese,Dairy,45,17.97,808.65
+INV-1137,2024-02-12,Oasis Beverage Supply,Sparkling Water,Beverages,91,3.56,323.96
+INV-1138,2024-02-12,Oasis Beverage Supply,Orange Juice,Beverages,89,5.7,507.3
+INV-1139,2024-02-12,Oasis Beverage Supply,Apple Juice,Beverages,47,5.02,235.94
+INV-1140,2024-02-12,Oasis Beverage Supply,Tonic Water,Beverages,32,4.25,136.0
+INV-1141,2024-02-19,FreshFarm Produce,Tomatoes,Vegetables,35,3.51,122.85
+INV-1142,2024-02-19,FreshFarm Produce,Onions,Vegetables,80,2.3,184.0
+INV-1143,2024-02-19,FreshFarm Produce,Lettuce,Vegetables,35,2.46,86.1
+INV-1144,2024-02-19,FreshFarm Produce,Cucumbers,Vegetables,22,2.43,53.46
+INV-1145,2024-02-19,Desert Meat Co,Chicken Breast,Meat,23,26.67,613.41
+INV-1146,2024-02-19,Desert Meat Co,Beef Tenderloin,Meat,28,59.76,1673.28
+INV-1147,2024-02-19,Desert Meat Co,Lamb Chops,Meat,39,47.35,1846.65
+INV-1148,2024-02-19,Desert Meat Co,Minced Beef,Meat,31,27.17,842.27
+INV-1149,2024-02-19,Red Sea Seafood,Salmon Fillet,Seafood,15,67.27,1009.05
+INV-1150,2024-02-19,Red Sea Seafood,Prawns,Seafood,12,46.87,562.44
+INV-1151,2024-02-19,Red Sea Seafood,Sea Bass,Seafood,17,55.93,950.81
+INV-1152,2024-02-19,Red Sea Seafood,Calamari,Seafood,10,36.39,363.9
+INV-1153,2024-02-19,Gulf Dairy,Milk,Dairy,21,7.06,148.26
+INV-1154,2024-02-19,Gulf Dairy,Yogurt,Dairy,28,4.96,138.88
+INV-1155,2024-02-19,Gulf Dairy,Cream,Dairy,23,9.85,226.55
+INV-1156,2024-02-19,Gulf Dairy,Cheddar Cheese,Dairy,19,19.28,366.32
+INV-1157,2024-02-19,Oasis Beverage Supply,Sparkling Water,Beverages,71,3.8,269.8
+INV-1158,2024-02-19,Oasis Beverage Supply,Orange Juice,Beverages,80,5.71,456.8
+INV-1159,2024-02-19,Oasis Beverage Supply,Apple Juice,Beverages,62,5.33,330.46
+INV-1160,2024-02-19,Oasis Beverage Supply,Tonic Water,Beverages,91,4.41,401.31
+INV-1161,2024-02-26,FreshFarm Produce,Tomatoes,Vegetables,72,3.41,245.52
+INV-1162,2024-02-26,FreshFarm Produce,Onions,Vegetables,79,2.37,187.23
+INV-1163,2024-02-26,FreshFarm Produce,Lettuce,Vegetables,80,2.57,205.6
+INV-1164,2024-02-26,FreshFarm Produce,Cucumbers,Vegetables,36,2.59,93.24
+INV-1165,2024-02-26,Desert Meat Co,Chicken Breast,Meat,13,26.21,340.73
+INV-1166,2024-02-26,Desert Meat Co,Beef Tenderloin,Meat,14,62.85,879.9
+INV-1167,2024-02-26,Desert Meat Co,Lamb Chops,Meat,29,47.35,1373.15
+INV-1168,2024-02-26,Desert Meat Co,Minced Beef,Meat,20,26.98,539.6
+INV-1169,2024-02-26,Red Sea Seafood,Salmon Fillet,Seafood,28,66.76,1869.28
+INV-1170,2024-02-26,Red Sea Seafood,Prawns,Seafood,24,49.86,1196.64
+INV-1171,2024-02-26,Red Sea Seafood,Sea Bass,Seafood,9,57.26,515.34
+INV-1172,2024-02-26,Red Sea Seafood,Calamari,Seafood,21,35.67,749.07
+INV-1173,2024-02-26,Gulf Dairy,Milk,Dairy,17,7.49,127.33
+INV-1174,2024-02-26,Gulf Dairy,Yogurt,Dairy,23,4.81,110.63
+INV-1175,2024-02-26,Gulf Dairy,Cream,Dairy,31,10.24,317.44
+INV-1176,2024-02-26,Gulf Dairy,Cheddar Cheese,Dairy,43,19.04,818.72
+INV-1177,2024-02-26,Oasis Beverage Supply,Sparkling Water,Beverages,78,3.92,305.76
+INV-1178,2024-02-26,Oasis Beverage Supply,Orange Juice,Beverages,38,5.89,223.82
+INV-1179,2024-02-26,Oasis Beverage Supply,Apple Juice,Beverages,43,5.21,224.03
+INV-1180,2024-02-26,Oasis Beverage Supply,Tonic Water,Beverages,71,4.54,322.34
+INV-1181,2024-03-04,FreshFarm Produce,Tomatoes,Vegetables,29,3.53,102.37
+INV-1182,2024-03-04,FreshFarm Produce,Onions,Vegetables,22,2.41,53.02
+INV-1183,2024-03-04,FreshFarm Produce,Lettuce,Vegetables,77,2.58,198.66
+INV-1184,2024-03-04,FreshFarm Produce,Cucumbers,Vegetables,75,2.78,208.5
+INV-1185,2024-03-04,Desert Meat Co,Chicken Breast,Meat,21,25.54,536.34
+INV-1186,2024-03-04,Desert Meat Co,Beef Tenderloin,Meat,17,62.42,1061.14
+INV-1187,2024-03-04,Desert Meat Co,Lamb Chops,Meat,21,49.4,1037.4
+INV-1188,2024-03-04,Desert Meat Co,Minced Beef,Meat,38,28.49,1082.62
+INV-1189,2024-03-04,Red Sea Seafood,Salmon Fillet,Seafood,27,71.18,1921.86
+INV-1190,2024-03-04,Red Sea Seafood,Prawns,Seafood,15,52.47,787.05
+INV-1191,2024-03-04,Red Sea Seafood,Sea Bass,Seafood,13,60.99,792.87
+INV-1192,2024-03-04,Red Sea Seafood,Calamari,Seafood,8,38.06,304.48
+INV-1193,2024-03-04,Gulf Dairy,Milk,Dairy,36,7.41,266.76
+INV-1194,2024-03-04,Gulf Dairy,Yogurt,Dairy,41,5.08,208.28
+INV-1195,2024-03-04,Gulf Dairy,Cream,Dairy,30,10.84,325.2
+INV-1196,2024-03-04,Gulf Dairy,Cheddar Cheese,Dairy,21,19.03,399.63
+INV-1197,2024-03-04,Oasis Beverage Supply,Sparkling Water,Beverages,28,3.97,111.16
+INV-1198,2024-03-04,Oasis Beverage Supply,Orange Juice,Beverages,52,6.27,326.04
+INV-1199,2024-03-04,Oasis Beverage Supply,Apple Juice,Beverages,82,5.17,423.94
+INV-1200,2024-03-04,Oasis Beverage Supply,Tonic Water,Beverages,53,4.58,242.74
+INV-1201,2024-03-11,FreshFarm Produce,Tomatoes,Vegetables,62,3.51,217.62
+INV-1202,2024-03-11,FreshFarm Produce,Onions,Vegetables,41,2.39,97.99
+INV-1203,2024-03-11,FreshFarm Produce,Lettuce,Vegetables,24,2.58,61.92
+INV-1204,2024-03-11,FreshFarm Produce,Cucumbers,Vegetables,37,2.99,110.63
+INV-1205,2024-03-11,Desert Meat Co,Chicken Breast,Meat,26,25.76,669.76
+INV-1206,2024-03-11,Desert Meat Co,Beef Tenderloin,Meat,36,63.29,2278.44
+INV-1207,2024-03-11,Desert Meat Co,Lamb Chops,Meat,40,50.83,2033.2
+INV-1208,2024-03-11,Desert Meat Co,Minced Beef,Meat,38,27.72,1053.36
+INV-1209,2024-03-11,Red Sea Seafood,Salmon Fillet,Seafood,13,76.64,996.32
+INV-1210,2024-03-11,Red Sea Seafood,Prawns,Seafood,16,54.25,868.0
+INV-1211,2024-03-11,Red Sea Seafood,Sea Bass,Seafood,27,59.42,1604.34
+INV-1212,2024-03-11,Red Sea Seafood,Calamari,Seafood,18,38.74,697.32
+INV-1213,2024-03-11,Gulf Dairy,Milk,Dairy,47,7.54,354.38
+INV-1214,2024-03-11,Gulf Dairy,Yogurt,Dairy,27,4.99,134.73
+INV-1215,2024-03-11,Gulf Dairy,Cream,Dairy,42,10.82,454.44
+INV-1216,2024-03-11,Gulf Dairy,Cheddar Cheese,Dairy,49,18.46,904.54
+INV-1217,2024-03-11,Oasis Beverage Supply,Sparkling Water,Beverages,49,4.15,203.35
+INV-1218,2024-03-11,Oasis Beverage Supply,Orange Juice,Beverages,32,6.33,202.56
+INV-1219,2024-03-11,Oasis Beverage Supply,Apple Juice,Beverages,66,5.55,366.3
+INV-1220,2024-03-11,Oasis Beverage Supply,Tonic Water,Beverages,39,4.76,185.64
+INV-1221,2024-03-18,FreshFarm Produce,Tomatoes,Vegetables,39,3.68,143.52
+INV-1222,2024-03-18,FreshFarm Produce,Onions,Vegetables,62,2.45,151.9
+INV-1223,2024-03-18,FreshFarm Produce,Lettuce,Vegetables,45,2.62,117.9
+INV-1224,2024-03-18,FreshFarm Produce,Cucumbers,Vegetables,55,3.13,172.15
+INV-1225,2024-03-18,Desert Meat Co,Chicken Breast,Meat,23,25.35,583.05
+INV-1226,2024-03-18,Desert Meat Co,Beef Tenderloin,Meat,22,66.02,1452.44
+INV-1227,2024-03-18,Desert Meat Co,Lamb Chops,Meat,38,53.09,2017.42
+INV-1228,2024-03-18,Desert Meat Co,Minced Beef,Meat,28,27.42,767.76
+INV-1229,2024-03-18,Red Sea Seafood,Salmon Fillet,Seafood,25,76.88,1922.0
+INV-1230,2024-03-18,Red Sea Seafood,Prawns,Seafood,17,57.6,979.2
+INV-1231,2024-03-18,Red Sea Seafood,Sea Bass,Seafood,21,59.51,1249.71
+INV-1232,2024-03-18,Red Sea Seafood,Calamari,Seafood,27,40.93,1105.11
+INV-1233,2024-03-18,Gulf Dairy,Milk,Dairy,44,7.86,345.84
+INV-1234,2024-03-18,Gulf Dairy,Yogurt,Dairy,28,5.08,142.24
+INV-1235,2024-03-18,Gulf Dairy,Cream,Dairy,25,11.1,277.5
+INV-1236,2024-03-18,Gulf Dairy,Cheddar Cheese,Dairy,33,19.24,634.92
+INV-1237,2024-03-18,Oasis Beverage Supply,Sparkling Water,Beverages,66,4.26,281.16
+INV-1238,2024-03-18,Oasis Beverage Supply,Orange Juice,Beverages,54,6.21,335.34
+INV-1239,2024-03-18,Oasis Beverage Supply,Apple Juice,Beverages,52,5.79,301.08
+INV-1240,2024-03-18,Oasis Beverage Supply,Tonic Water,Beverages,42,5.04,211.68
+INV-1241,2024-03-25,FreshFarm Produce,Tomatoes,Vegetables,35,3.58,125.3
+INV-1242,2024-03-25,FreshFarm Produce,Onions,Vegetables,59,2.64,155.76
+INV-1243,2024-03-25,FreshFarm Produce,Lettuce,Vegetables,24,2.79,66.96
+INV-1244,2024-03-25,FreshFarm Produce,Cucumbers,Vegetables,76,3.19,242.44
+INV-1245,2024-03-25,Desert Meat Co,Chicken Breast,Meat,16,26.35,421.6
+INV-1246,2024-03-25,Desert Meat Co,Beef Tenderloin,Meat,22,69.26,1523.72
+INV-1247,2024-03-25,Desert Meat Co,Lamb Chops,Meat,17,54.38,924.46
+INV-1248,2024-03-25,Desert Meat Co,Minced Beef,Meat,32,27.04,865.28
+INV-1249,2024-03-25,Red Sea Seafood,Salmon Fillet,Seafood,11,74.62,820.82
+INV-1250,2024-03-25,Red Sea Seafood,Prawns,Seafood,15,60.8,912.0
+INV-1251,2024-03-25,Red Sea Seafood,Sea Bass,Seafood,30,58.88,1766.4
+INV-1252,2024-03-25,Red Sea Seafood,Calamari,Seafood,9,42.03,378.27
+INV-1253,2024-03-25,Gulf Dairy,Milk,Dairy,22,8.11,178.42
+INV-1254,2024-03-25,Gulf Dairy,Yogurt,Dairy,44,5.18,227.92
+INV-1255,2024-03-25,Gulf Dairy,Cream,Dairy,50,11.58,579.0
+INV-1256,2024-03-25,Gulf Dairy,Cheddar Cheese,Dairy,43,19.92,856.56
+INV-1257,2024-03-25,Oasis Beverage Supply,Sparkling Water,Beverages,88,4.42,388.96
+INV-1258,2024-03-25,Oasis Beverage Supply,Orange Juice,Beverages,94,6.32,594.08
+INV-1259,2024-03-25,Oasis Beverage Supply,Apple Juice,Beverages,44,5.9,259.6
+INV-1260,2024-03-25,Oasis Beverage Supply,Tonic Water,Beverages,84,5.3,445.2
+INV-1261,2024-04-01,FreshFarm Produce,Tomatoes,Vegetables,68,3.65,248.2
+INV-1262,2024-04-01,FreshFarm Produce,Onions,Vegetables,60,2.63,157.8
+INV-1263,2024-04-01,FreshFarm Produce,Lettuce,Vegetables,69,2.79,192.51
+INV-1264,2024-04-01,FreshFarm Produce,Cucumbers,Vegetables,60,3.28,196.8
+INV-1265,2024-04-01,Desert Meat Co,Chicken Breast,Meat,24,26.25,630.0
+INV-1266,2024-04-01,Desert Meat Co,Beef Tenderloin,Meat,19,67.77,1287.63
+INV-1267,2024-04-01,Desert Meat Co,Lamb Chops,Meat,20,54.15,1083.0
+INV-1268,2024-04-01,Desert Meat Co,Minced Beef,Meat,27,27.18,733.86
+INV-1269,2024-04-01,Red Sea Seafood,Salmon Fillet,Seafood,12,73.04,876.48
+INV-1270,2024-04-01,Red Sea Seafood,Prawns,Seafood,30,60.52,1815.6
+INV-1271,2024-04-01,Red Sea Seafood,Sea Bass,Seafood,14,58.1,813.4
+INV-1272,2024-04-01,Red Sea Seafood,Calamari,Seafood,21,41.07,862.47
+INV-1273,2024-04-01,Gulf Dairy,Milk,Dairy,44,8.16,359.04
+INV-1274,2024-04-01,Gulf Dairy,Yogurt,Dairy,28,5.26,147.28
+INV-1275,2024-04-01,Gulf Dairy,Cream,Dairy,39,12.29,479.31
+INV-1276,2024-04-01,Gulf Dairy,Cheddar Cheese,Dairy,16,21.31,340.96
+INV-1277,2024-04-01,Oasis Beverage Supply,Sparkling Water,Beverages,97,4.7,455.9
+INV-1278,2024-04-01,Oasis Beverage Supply,Orange Juice,Beverages,24,6.39,153.36
+INV-1279,2024-04-01,Oasis Beverage Supply,Apple Juice,Beverages,62,6.33,392.46
+INV-1280,2024-04-01,Oasis Beverage Supply,Tonic Water,Beverages,77,5.58,429.66
+INV-1281,2024-04-08,FreshFarm Produce,Tomatoes,Vegetables,67,3.76,251.92
+INV-1282,2024-04-08,FreshFarm Produce,Onions,Vegetables,58,2.71,157.18
+INV-1283,2024-04-08,FreshFarm Produce,Lettuce,Vegetables,51,2.98,151.98
+INV-1284,2024-04-08,FreshFarm Produce,Cucumbers,Vegetables,47,3.26,153.22
+INV-1285,2024-04-08,Desert Meat Co,Chicken Breast,Meat,22,26.86,590.92
+INV-1286,2024-04-08,Desert Meat Co,Beef Tenderloin,Meat,31,68.24,2115.44
+INV-1287,2024-04-08,Desert Meat Co,Lamb Chops,Meat,33,57.28,1890.24
+INV-1288,2024-04-08,Desert Meat Co,Minced Beef,Meat,24,26.86,644.64
+INV-1289,2024-04-08,Red Sea Seafood,Salmon Fillet,Seafood,27,78.24,2112.48
+INV-1290,2024-04-08,Red Sea Seafood,Prawns,Seafood,20,62.26,1245.2
+INV-1291,2024-04-08,Red Sea Seafood,Sea Bass,Seafood,29,60.14,1744.06
+INV-1292,2024-04-08,Red Sea Seafood,Calamari,Seafood,28,39.96,1118.88
+INV-1293,2024-04-08,Gulf Dairy,Milk,Dairy,44,8.3,365.2
+INV-1294,2024-04-08,Gulf Dairy,Yogurt,Dairy,31,5.21,161.51
+INV-1295,2024-04-08,Gulf Dairy,Cream,Dairy,28,12.43,348.04
+INV-1296,2024-04-08,Gulf Dairy,Cheddar Cheese,Dairy,36,21.74,782.64
+INV-1297,2024-04-08,Oasis Beverage Supply,Sparkling Water,Beverages,72,4.95,356.4
+INV-1298,2024-04-08,Oasis Beverage Supply,Orange Juice,Beverages,77,6.39,492.03
+INV-1299,2024-04-08,Oasis Beverage Supply,Apple Juice,Beverages,34,6.32,214.88
+INV-1300,2024-04-08,Oasis Beverage Supply,Tonic Water,Beverages,93,5.7,530.1
+INV-1301,2024-04-15,FreshFarm Produce,Tomatoes,Vegetables,80,3.67,293.6
+INV-1302,2024-04-15,FreshFarm Produce,Onions,Vegetables,61,2.73,166.53
+INV-1303,2024-04-15,FreshFarm Produce,Lettuce,Vegetables,61,2.91,177.51
+INV-1304,2024-04-15,FreshFarm Produce,Cucumbers,Vegetables,21,3.18,66.78
+INV-1305,2024-04-15,Desert Meat Co,Chicken Breast,Meat,16,28.86,461.76
+INV-1306,2024-04-15,Desert Meat Co,Beef Tenderloin,Meat,29,72.49,2102.21
+INV-1307,2024-04-15,Desert Meat Co,Lamb Chops,Meat,14,56.52,791.28
+INV-1308,2024-04-15,Desert Meat Co,Minced Beef,Meat,13,27.45,356.85
+INV-1309,2024-04-15,Red Sea Seafood,Salmon Fillet,Seafood,14,80.75,1130.5
+INV-1310,2024-04-15,Red Sea Seafood,Prawns,Seafood,16,63.58,1017.28
+INV-1311,2024-04-15,Red Sea Seafood,Sea Bass,Seafood,13,63.41,824.33
+INV-1312,2024-04-15,Red Sea Seafood,Calamari,Seafood,30,41.42,1242.6
+INV-1313,2024-04-15,Gulf Dairy,Milk,Dairy,25,8.16,204.0
+INV-1314,2024-04-15,Gulf Dairy,Yogurt,Dairy,21,5.61,117.81
+INV-1315,2024-04-15,Gulf Dairy,Cream,Dairy,34,12.85,436.9
+INV-1316,2024-04-15,Gulf Dairy,Cheddar Cheese,Dairy,39,22.46,875.94
+INV-1317,2024-04-15,Oasis Beverage Supply,Sparkling Water,Beverages,49,5.02,245.98
+INV-1318,2024-04-15,Oasis Beverage Supply,Orange Juice,Beverages,55,6.25,343.75
+INV-1319,2024-04-15,Oasis Beverage Supply,Apple Juice,Beverages,62,6.2,384.4
+INV-1320,2024-04-15,Oasis Beverage Supply,Tonic Water,Beverages,100,6.06,606.0
+INV-1321,2024-04-22,FreshFarm Produce,Tomatoes,Vegetables,70,3.89,272.3
+INV-1322,2024-04-22,FreshFarm Produce,Onions,Vegetables,70,2.94,205.8
+INV-1323,2024-04-22,FreshFarm Produce,Lettuce,Vegetables,54,2.84,153.36
+INV-1324,2024-04-22,FreshFarm Produce,Cucumbers,Vegetables,43,3.23,138.89
+INV-1325,2024-04-22,Desert Meat Co,Chicken Breast,Meat,30,28.21,846.3
+INV-1326,2024-04-22,Desert Meat Co,Beef Tenderloin,Meat,37,73.04,2702.48
+INV-1327,2024-04-22,Desert Meat Co,Lamb Chops,Meat,25,57.44,1436.0
+INV-1328,2024-04-22,Desert Meat Co,Minced Beef,Meat,40,26.95,1078.0
+INV-1329,2024-04-22,Red Sea Seafood,Salmon Fillet,Seafood,22,81.54,1793.88
+INV-1330,2024-04-22,Red Sea Seafood,Prawns,Seafood,21,66.62,1399.02
+INV-1331,2024-04-22,Red Sea Seafood,Sea Bass,Seafood,24,62.74,1505.76
+INV-1332,2024-04-22,Red Sea Seafood,Calamari,Seafood,16,44.58,713.28
+INV-1333,2024-04-22,Gulf Dairy,Milk,Dairy,49,8.47,415.03
+INV-1334,2024-04-22,Gulf Dairy,Yogurt,Dairy,44,5.92,260.48
+INV-1335,2024-04-22,Gulf Dairy,Cream,Dairy,32,13.08,418.56
+INV-1336,2024-04-22,Gulf Dairy,Cheddar Cheese,Dairy,30,22.58,677.4
+INV-1337,2024-04-22,Oasis Beverage Supply,Sparkling Water,Beverages,35,5.33,186.55
+INV-1338,2024-04-22,Oasis Beverage Supply,Orange Juice,Beverages,81,6.25,506.25
+INV-1339,2024-04-22,Oasis Beverage Supply,Apple Juice,Beverages,83,6.18,512.94
+INV-1340,2024-04-22,Oasis Beverage Supply,Tonic Water,Beverages,72,6.26,450.72
+INV-1341,2024-04-29,FreshFarm Produce,Tomatoes,Vegetables,51,3.92,199.92
+INV-1342,2024-04-29,FreshFarm Produce,Onions,Vegetables,31,3.13,97.03
+INV-1343,2024-04-29,FreshFarm Produce,Lettuce,Vegetables,42,2.91,122.22
+INV-1344,2024-04-29,FreshFarm Produce,Cucumbers,Vegetables,41,3.42,140.22
+INV-1345,2024-04-29,Desert Meat Co,Chicken Breast,Meat,29,28.23,818.67
+INV-1346,2024-04-29,Desert Meat Co,Beef Tenderloin,Meat,18,76.48,1376.64
+INV-1347,2024-04-29,Desert Meat Co,Lamb Chops,Meat,26,59.23,1539.98
+INV-1348,2024-04-29,Desert Meat Co,Minced Beef,Meat,12,28.95,347.4
+INV-1349,2024-04-29,Red Sea Seafood,Salmon Fillet,Seafood,21,81.26,1706.46
+INV-1350,2024-04-29,Red Sea Seafood,Prawns,Seafood,15,68.2,1023.0
+INV-1351,2024-04-29,Red Sea Seafood,Sea Bass,Seafood,28,65.62,1837.36
+INV-1352,2024-04-29,Red Sea Seafood,Calamari,Seafood,22,46.73,1028.06
+INV-1353,2024-04-29,Gulf Dairy,Milk,Dairy,20,8.95,179.0
+INV-1354,2024-04-29,Gulf Dairy,Yogurt,Dairy,40,5.93,237.2
+INV-1355,2024-04-29,Gulf Dairy,Cream,Dairy,34,13.68,465.12
+INV-1356,2024-04-29,Gulf Dairy,Cheddar Cheese,Dairy,38,23.55,894.9
+INV-1357,2024-04-29,Oasis Beverage Supply,Sparkling Water,Beverages,91,5.45,495.95
+INV-1358,2024-04-29,Oasis Beverage Supply,Orange Juice,Beverages,94,6.3,592.2
+INV-1359,2024-04-29,Oasis Beverage Supply,Apple Juice,Beverages,82,6.22,510.04
+INV-1360,2024-04-29,Oasis Beverage Supply,Tonic Water,Beverages,56,6.26,350.56
+INV-1361,2024-05-06,FreshFarm Produce,Tomatoes,Vegetables,66,3.9,257.4
+INV-1362,2024-05-06,FreshFarm Produce,Onions,Vegetables,27,3.1,83.7
+INV-1363,2024-05-06,FreshFarm Produce,Lettuce,Vegetables,80,3.06,244.8
+INV-1364,2024-05-06,FreshFarm Produce,Cucumbers,Vegetables,31,3.6,111.6
+INV-1365,2024-05-06,Desert Meat Co,Chicken Breast,Meat,33,27.98,923.34
+INV-1366,2024-05-06,Desert Meat Co,Beef Tenderloin,Meat,33,78.26,2582.58
+INV-1367,2024-05-06,Desert Meat Co,Lamb Chops,Meat,34,61.29,2083.86
+INV-1368,2024-05-06,Desert Meat Co,Minced Beef,Meat,19,29.75,565.25
+INV-1369,2024-05-06,Red Sea Seafood,Salmon Fillet,Seafood,14,87.59,1226.26
+INV-1370,2024-05-06,Red Sea Seafood,Prawns,Seafood,19,68.38,1299.22
+INV-1371,2024-05-06,Red Sea Seafood,Sea Bass,Seafood,8,64.95,519.6
+INV-1372,2024-05-06,Red Sea Seafood,Calamari,Seafood,12,48.97,587.64
+INV-1373,2024-05-06,Gulf Dairy,Milk,Dairy,18,8.95,161.1
+INV-1374,2024-05-06,Gulf Dairy,Yogurt,Dairy,23,6.11,140.53
+INV-1375,2024-05-06,Gulf Dairy,Cream,Dairy,46,14.23,654.58
+INV-1376,2024-05-06,Gulf Dairy,Cheddar Cheese,Dairy,15,23.11,346.65
+INV-1377,2024-05-06,Oasis Beverage Supply,Sparkling Water,Beverages,84,5.63,472.92
+INV-1378,2024-05-06,Oasis Beverage Supply,Orange Juice,Beverages,67,6.44,431.48
+INV-1379,2024-05-06,Oasis Beverage Supply,Apple Juice,Beverages,30,6.16,184.8
+INV-1380,2024-05-06,Oasis Beverage Supply,Tonic Water,Beverages,85,6.25,531.25
+INV-1381,2024-05-13,FreshFarm Produce,Tomatoes,Vegetables,24,3.83,91.92
+INV-1382,2024-05-13,FreshFarm Produce,Onions,Vegetables,24,3.14,75.36
+INV-1383,2024-05-13,FreshFarm Produce,Lettuce,Vegetables,63,3.16,199.08
+INV-1384,2024-05-13,FreshFarm Produce,Cucumbers,Vegetables,29,3.51,101.79
+INV-1385,2024-05-13,Desert Meat Co,Chicken Breast,Meat,40,29.64,1185.6
+INV-1386,2024-05-13,Desert Meat Co,Beef Tenderloin,Meat,17,78.53,1335.01
+INV-1387,2024-05-13,Desert Meat Co,Lamb Chops,Meat,34,60.25,2048.5
+INV-1388,2024-05-13,Desert Meat Co,Minced Beef,Meat,29,30.22,876.38
+INV-1389,2024-05-13,Red Sea Seafood,Salmon Fillet,Seafood,15,92.58,1388.7
+INV-1390,2024-05-13,Red Sea Seafood,Prawns,Seafood,20,72.16,1443.2
+INV-1391,2024-05-13,Red Sea Seafood,Sea Bass,Seafood,22,66.22,1456.84
+INV-1392,2024-05-13,Red Sea Seafood,Calamari,Seafood,26,49.1,1276.6
+INV-1393,2024-05-13,Gulf Dairy,Milk,Dairy,34,9.66,328.44
+INV-1394,2024-05-13,Gulf Dairy,Yogurt,Dairy,18,6.31,113.58
+INV-1395,2024-05-13,Gulf Dairy,Cream,Dairy,21,14.76,309.96
+INV-1396,2024-05-13,Gulf Dairy,Cheddar Cheese,Dairy,28,24.83,695.24
+INV-1397,2024-05-13,Oasis Beverage Supply,Sparkling Water,Beverages,57,5.85,333.45
+INV-1398,2024-05-13,Oasis Beverage Supply,Orange Juice,Beverages,44,6.71,295.24
+INV-1399,2024-05-13,Oasis Beverage Supply,Apple Juice,Beverages,94,6.14,577.16
+INV-1400,2024-05-13,Oasis Beverage Supply,Tonic Water,Beverages,24,6.11,146.64
+INV-1401,2024-05-20,FreshFarm Produce,Tomatoes,Vegetables,64,3.89,248.96
+INV-1402,2024-05-20,FreshFarm Produce,Onions,Vegetables,38,3.25,123.5
+INV-1403,2024-05-20,FreshFarm Produce,Lettuce,Vegetables,38,3.08,117.04
+INV-1404,2024-05-20,FreshFarm Produce,Cucumbers,Vegetables,64,3.68,235.52
+INV-1405,2024-05-20,Desert Meat Co,Chicken Breast,Meat,12,31.55,378.6
+INV-1406,2024-05-20,Desert Meat Co,Beef Tenderloin,Meat,39,82.11,3202.29
+INV-1407,2024-05-20,Desert Meat Co,Lamb Chops,Meat,35,60.2,2107.0
+INV-1408,2024-05-20,Desert Meat Co,Minced Beef,Meat,31,31.39,973.09
+INV-1409,2024-05-20,Red Sea Seafood,Salmon Fillet,Seafood,14,97.99,1371.86
+INV-1410,2024-05-20,Red Sea Seafood,Prawns,Seafood,25,73.37,1834.25
+INV-1411,2024-05-20,Red Sea Seafood,Sea Bass,Seafood,12,65.87,790.44
+INV-1412,2024-05-20,Red Sea Seafood,Calamari,Seafood,12,52.53,630.36
+INV-1413,2024-05-20,Gulf Dairy,Milk,Dairy,25,9.45,236.25
+INV-1414,2024-05-20,Gulf Dairy,Yogurt,Dairy,33,6.67,220.11
+INV-1415,2024-05-20,Gulf Dairy,Cream,Dairy,44,15.03,661.32
+INV-1416,2024-05-20,Gulf Dairy,Cheddar Cheese,Dairy,40,25.97,1038.8
+INV-1417,2024-05-20,Oasis Beverage Supply,Sparkling Water,Beverages,88,6.28,552.64
+INV-1418,2024-05-20,Oasis Beverage Supply,Orange Juice,Beverages,80,6.91,552.8
+INV-1419,2024-05-20,Oasis Beverage Supply,Apple Juice,Beverages,29,6.01,174.29
+INV-1420,2024-05-20,Oasis Beverage Supply,Tonic Water,Beverages,65,6.52,423.8
+INV-1421,2024-05-27,FreshFarm Produce,Tomatoes,Vegetables,21,4.03,84.63
+INV-1422,2024-05-27,FreshFarm Produce,Onions,Vegetables,63,3.19,200.97
+INV-1423,2024-05-27,FreshFarm Produce,Lettuce,Vegetables,56,3.27,183.12
+INV-1424,2024-05-27,FreshFarm Produce,Cucumbers,Vegetables,21,3.81,80.01
+INV-1425,2024-05-27,Desert Meat Co,Chicken Breast,Meat,31,34.07,1056.17
+INV-1426,2024-05-27,Desert Meat Co,Beef Tenderloin,Meat,28,87.07,2437.96
+INV-1427,2024-05-27,Desert Meat Co,Lamb Chops,Meat,34,58.66,1994.44
+INV-1428,2024-05-27,Desert Meat Co,Minced Beef,Meat,26,31.05,807.3
+INV-1429,2024-05-27,Red Sea Seafood,Salmon Fillet,Seafood,16,102.07,1633.12
+INV-1430,2024-05-27,Red Sea Seafood,Prawns,Seafood,26,72.63,1888.38
+INV-1431,2024-05-27,Red Sea Seafood,Sea Bass,Seafood,23,67.05,1542.15
+INV-1432,2024-05-27,Red Sea Seafood,Calamari,Seafood,23,56.55,1300.65
+INV-1433,2024-05-27,Gulf Dairy,Milk,Dairy,36,9.53,343.08
+INV-1434,2024-05-27,Gulf Dairy,Yogurt,Dairy,21,6.71,140.91
+INV-1435,2024-05-27,Gulf Dairy,Cream,Dairy,36,16.0,576.0
+INV-1436,2024-05-27,Gulf Dairy,Cheddar Cheese,Dairy,46,26.37,1213.02
+INV-1437,2024-05-27,Oasis Beverage Supply,Sparkling Water,Beverages,75,6.29,471.75
+INV-1438,2024-05-27,Oasis Beverage Supply,Orange Juice,Beverages,94,7.32,688.08
+INV-1439,2024-05-27,Oasis Beverage Supply,Apple Juice,Beverages,35,5.85,204.75
+INV-1440,2024-05-27,Oasis Beverage Supply,Tonic Water,Beverages,65,6.55,425.75
+INV-1441,2024-06-03,FreshFarm Produce,Tomatoes,Vegetables,69,3.96,273.24
+INV-1442,2024-06-03,FreshFarm Produce,Onions,Vegetables,52,3.24,168.48
+INV-1443,2024-06-03,FreshFarm Produce,Lettuce,Vegetables,20,3.47,69.4
+INV-1444,2024-06-03,FreshFarm Produce,Cucumbers,Vegetables,54,3.97,214.38
+INV-1445,2024-06-03,Desert Meat Co,Chicken Breast,Meat,11,34.78,382.58
+INV-1446,2024-06-03,Desert Meat Co,Beef Tenderloin,Meat,21,86.25,1811.25
+INV-1447,2024-06-03,Desert Meat Co,Lamb Chops,Meat,25,60.92,1523.0
+INV-1448,2024-06-03,Desert Meat Co,Minced Beef,Meat,34,32.25,1096.5
+INV-1449,2024-06-03,Red Sea Seafood,Salmon Fillet,Seafood,16,99.59,1593.44
+INV-1450,2024-06-03,Red Sea Seafood,Prawns,Seafood,17,74.84,1272.28
+INV-1451,2024-06-03,Red Sea Seafood,Sea Bass,Seafood,30,68.27,2048.1
+INV-1452,2024-06-03,Red Sea Seafood,Calamari,Seafood,8,57.87,462.96
+INV-1453,2024-06-03,Gulf Dairy,Milk,Dairy,30,10.26,307.8
+INV-1454,2024-06-03,Gulf Dairy,Yogurt,Dairy,34,7.03,239.02
+INV-1455,2024-06-03,Gulf Dairy,Cream,Dairy,50,16.49,824.5
+INV-1456,2024-06-03,Gulf Dairy,Cheddar Cheese,Dairy,29,26.76,776.04
+INV-1457,2024-06-03,Oasis Beverage Supply,Sparkling Water,Beverages,38,6.79,258.02
+INV-1458,2024-06-03,Oasis Beverage Supply,Orange Juice,Beverages,39,7.47,291.33
+INV-1459,2024-06-03,Oasis Beverage Supply,Apple Juice,Beverages,43,6.09,261.87
+INV-1460,2024-06-03,Oasis Beverage Supply,Tonic Water,Beverages,61,6.71,409.31
+INV-1461,2024-06-10,FreshFarm Produce,Tomatoes,Vegetables,37,4.06,150.22
+INV-1462,2024-06-10,FreshFarm Produce,Onions,Vegetables,50,3.29,164.5
+INV-1463,2024-06-10,FreshFarm Produce,Lettuce,Vegetables,35,3.74,130.9
+INV-1464,2024-06-10,FreshFarm Produce,Cucumbers,Vegetables,29,4.05,117.45
+INV-1465,2024-06-10,Desert Meat Co,Chicken Breast,Meat,39,35.2,1372.8
+INV-1466,2024-06-10,Desert Meat Co,Beef Tenderloin,Meat,33,89.35,2948.55
+INV-1467,2024-06-10,Desert Meat Co,Lamb Chops,Meat,37,64.98,2404.26
+INV-1468,2024-06-10,Desert Meat Co,Minced Beef,Meat,34,31.53,1072.02
+INV-1469,2024-06-10,Red Sea Seafood,Salmon Fillet,Seafood,21,105.26,2210.46
+INV-1470,2024-06-10,Red Sea Seafood,Prawns,Seafood,24,75.39,1809.36
+INV-1471,2024-06-10,Red Sea Seafood,Sea Bass,Seafood,8,68.23,545.84
+INV-1472,2024-06-10,Red Sea Seafood,Calamari,Seafood,17,57.93,984.81
+INV-1473,2024-06-10,Gulf Dairy,Milk,Dairy,46,10.9,501.4
+INV-1474,2024-06-10,Gulf Dairy,Yogurt,Dairy,43,7.49,322.07
+INV-1475,2024-06-10,Gulf Dairy,Cream,Dairy,37,16.97,627.89
+INV-1476,2024-06-10,Gulf Dairy,Cheddar Cheese,Dairy,49,26.94,1320.06
+INV-1477,2024-06-10,Oasis Beverage Supply,Sparkling Water,Beverages,65,6.87,446.55
+INV-1478,2024-06-10,Oasis Beverage Supply,Orange Juice,Beverages,54,7.96,429.84
+INV-1479,2024-06-10,Oasis Beverage Supply,Apple Juice,Beverages,53,6.29,333.37
+INV-1480,2024-06-10,Oasis Beverage Supply,Tonic Water,Beverages,76,7.14,542.64
+INV-1481,2024-06-17,FreshFarm Produce,Tomatoes,Vegetables,67,3.96,265.32
+INV-1482,2024-06-17,FreshFarm Produce,Onions,Vegetables,78,3.36,262.08
+INV-1483,2024-06-17,FreshFarm Produce,Lettuce,Vegetables,44,3.96,174.24
+INV-1484,2024-06-17,FreshFarm Produce,Cucumbers,Vegetables,70,4.37,305.9
+INV-1485,2024-06-17,Desert Meat Co,Chicken Breast,Meat,14,37.32,522.48
+INV-1486,2024-06-17,Desert Meat Co,Beef Tenderloin,Meat,11,91.54,1006.94
+INV-1487,2024-06-17,Desert Meat Co,Lamb Chops,Meat,40,63.93,2557.2
+INV-1488,2024-06-17,Desert Meat Co,Minced Beef,Meat,37,32.63,1207.31
+INV-1489,2024-06-17,Red Sea Seafood,Salmon Fillet,Seafood,22,103.26,2271.72
+INV-1490,2024-06-17,Red Sea Seafood,Prawns,Seafood,22,73.96,1627.12
+INV-1491,2024-06-17,Red Sea Seafood,Sea Bass,Seafood,12,66.3,795.6
+INV-1492,2024-06-17,Red Sea Seafood,Calamari,Seafood,28,58.8,1646.4
+INV-1493,2024-06-17,Gulf Dairy,Milk,Dairy,19,11.74,223.06
+INV-1494,2024-06-17,Gulf Dairy,Yogurt,Dairy,31,7.65,237.15
+INV-1495,2024-06-17,Gulf Dairy,Cream,Dairy,40,17.09,683.6
+INV-1496,2024-06-17,Gulf Dairy,Cheddar Cheese,Dairy,36,28.06,1010.16
+INV-1497,2024-06-17,Oasis Beverage Supply,Sparkling Water,Beverages,92,7.31,672.52
+INV-1498,2024-06-17,Oasis Beverage Supply,Orange Juice,Beverages,64,8.05,515.2
+INV-1499,2024-06-17,Oasis Beverage Supply,Apple Juice,Beverages,86,6.53,561.58
+INV-1500,2024-06-17,Oasis Beverage Supply,Tonic Water,Beverages,28,7.61,213.08
+INV-1501,2024-06-24,FreshFarm Produce,Tomatoes,Vegetables,35,4.11,143.85
+INV-1502,2024-06-24,FreshFarm Produce,Onions,Vegetables,78,3.49,272.22
+INV-1503,2024-06-24,FreshFarm Produce,Lettuce,Vegetables,34,3.97,134.98
+INV-1504,2024-06-24,FreshFarm Produce,Cucumbers,Vegetables,47,4.6,216.2
+INV-1505,2024-06-24,Desert Meat Co,Chicken Breast,Meat,34,40.22,1367.48
+INV-1506,2024-06-24,Desert Meat Co,Beef Tenderloin,Meat,37,95.18,3521.66
+INV-1507,2024-06-24,Desert Meat Co,Lamb Chops,Meat,15,62.72,940.8
+INV-1508,2024-06-24,Desert Meat Co,Minced Beef,Meat,38,34.14,1297.32
+INV-1509,2024-06-24,Red Sea Seafood,Salmon Fillet,Seafood,18,100.49,1808.82
+INV-1510,2024-06-24,Red Sea Seafood,Prawns,Seafood,17,78.22,1329.74
+INV-1511,2024-06-24,Red Sea Seafood,Sea Bass,Seafood,21,66.93,1405.53
+INV-1512,2024-06-24,Red Sea Seafood,Calamari,Seafood,24,57.98,1391.52
+INV-1513,2024-06-24,Gulf Dairy,Milk,Dairy,26,11.92,309.92
+INV-1514,2024-06-24,Gulf Dairy,Yogurt,Dairy,20,7.56,151.2
+INV-1515,2024-06-24,Gulf Dairy,Cream,Dairy,39,17.72,691.08
+INV-1516,2024-06-24,Gulf Dairy,Cheddar Cheese,Dairy,30,29.13,873.9
+INV-1517,2024-06-24,Oasis Beverage Supply,Sparkling Water,Beverages,98,7.49,734.02
+INV-1518,2024-06-24,Oasis Beverage Supply,Orange Juice,Beverages,83,7.94,659.02
+INV-1519,2024-06-24,Oasis Beverage Supply,Apple Juice,Beverages,82,6.79,556.78
+INV-1520,2024-06-24,Oasis Beverage Supply,Tonic Water,Beverages,25,7.6,190.0
+INV-1019,2024-01-01,Oasis Beverage Supply,Apple Juice,Beverages,68,5.1,346.8
