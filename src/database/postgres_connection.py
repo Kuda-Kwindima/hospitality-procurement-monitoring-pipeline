@@ -24,4 +24,12 @@ def get_postgres_engine():
         f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}"
     )
 
+    print("=" * 50)
+    print("ENV FILE:", env_path)
+    print("USER:", user)
+    print("HOST:", host)
+    print("PORT:", port)
+    print("DATABASE:", database)
+    print("=" * 50)
+
     return create_engine(connection_url)

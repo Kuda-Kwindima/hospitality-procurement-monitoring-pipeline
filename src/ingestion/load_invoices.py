@@ -1,3 +1,4 @@
+from src.database.postgres_connection import get_postgres_engine
 from pathlib import Path
 import sqlite3
 import pandas as pd
@@ -98,6 +99,24 @@ def load_to_sqlite(df: pd.DataFrame, db_path: Path, table_name: str = "raw_invoi
     print(f"Loaded {len(df)} rows into SQLite table '{table_name}'.")
     print(f"Database saved at: {db_path}")
 
+def load_to_postgres(
+    df: pd.DataFrame,
+    table_name: str = "raw_invoices"
+) -> None:
+    """Load cleaned data into PostgreSQL."""
+
+    engine = get_postgres_engine()
+
+    df.to_sql(
+        table_name,
+        engine,
+        if_exists="replace",
+        index=False
+    )
+
+    print(
+        f"Loaded {len(df)} rows into PostgreSQL table '{table_name}'."
+    )
 
 def main():
     _, csv_path, db_path = get_project_paths()
@@ -105,7 +124,7 @@ def main():
     invoices_df = extract_invoices(csv_path)
     validate_schema(invoices_df)
     cleaned_df = clean_invoices(invoices_df)
-    load_to_sqlite(cleaned_df, db_path)
+    load_to_postgres(cleaned_df)
 
 
 if __name__ == "__main__":

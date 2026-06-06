@@ -1,25 +1,17 @@
-from pathlib import Path
-import sqlite3
 import pandas as pd
 
-
-def get_db_path() -> Path:
-    """Return the SQLite database path."""
-    project_root = Path(__file__).resolve().parents[2]
-    return project_root / "db" / "procurement.db"
+from src.database.postgres_connection import get_postgres_engine
 
 
-def extract_raw_invoices(db_path: Path, table_name: str = "raw_invoices") -> pd.DataFrame:
-    """Read raw invoice data from SQLite."""
-    if not db_path.exists():
-        raise FileNotFoundError(f"Database not found: {db_path}")
+def extract_raw_invoices(table_name: str = "raw_invoices") -> pd.DataFrame:
+    """Read raw invoice data from PostgreSQL."""
+    engine = get_postgres_engine()
 
     query = f"SELECT * FROM {table_name}"
 
-    with sqlite3.connect(db_path) as conn:
-        df = pd.read_sql(query, conn)
+    df = pd.read_sql(query, engine)
 
-    print(f"Extracted {len(df)} rows from '{table_name}'.")
+    print(f"Extracted {len(df)} rows from PostgreSQL table '{table_name}'.")
     return df
 
 
@@ -51,21 +43,25 @@ def transform_price_history(df: pd.DataFrame) -> pd.DataFrame:
 
 def load_price_history(
     df: pd.DataFrame,
-    db_path: Path,
     table_name: str = "price_history",
 ) -> None:
-    """Load transformed price history into SQLite."""
-    with sqlite3.connect(db_path) as conn:
-        df.to_sql(table_name, conn, if_exists="replace", index=False)
+    """Load transformed price history into PostgreSQL."""
+    engine = get_postgres_engine()
 
-    print(f"Loaded {len(df)} rows into SQLite table '{table_name}'.")
+    df.to_sql(
+        table_name,
+        engine,
+        if_exists="replace",
+        index=False,
+    )
+
+    print(f"Loaded {len(df)} rows into PostgreSQL table '{table_name}'.")
 
 
 def main():
-    db_path = get_db_path()
-    raw_df = extract_raw_invoices(db_path)
+    raw_df = extract_raw_invoices()
     price_history_df = transform_price_history(raw_df)
-    load_price_history(price_history_df, db_path)
+    load_price_history(price_history_df)
 
 
 if __name__ == "__main__":

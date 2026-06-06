@@ -2,3 +2,6 @@ pandas
 numpy
 pyyaml
 pytest
+sqlalchemy
+psycopg2-binary
+python-dotenv
