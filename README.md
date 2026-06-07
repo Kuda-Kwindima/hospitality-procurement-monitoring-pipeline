@@ -63,8 +63,6 @@ This project demonstrates core **data engineering concepts** including:
 
 # Project Structure
 
-# Project Structure
-
 ```text
 hospitality-procurement-monitoring-pipeline/
 │
@@ -225,7 +223,7 @@ python -m pip install -r requirements.txt
 ### 2. Run the pipeline
 
 ```
-python pipeline/run_pipeline.py
+python -m pipeline.run_pipeline
 ```
 
 If using a specific interpreter:
@@ -260,7 +258,7 @@ The pipeline executes the following stages:
 - standardizes supplier names
 - removes critical nulls
 - removes duplicate rows
-- loads cleaned data into SQLite
+- loads cleaned data into PostgreSQL
 
 ### 3. build_price_history.py
 
