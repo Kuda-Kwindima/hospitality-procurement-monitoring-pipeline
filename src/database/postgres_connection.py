@@ -9,7 +9,7 @@ def get_postgres_engine():
     """Create and return a PostgreSQL SQLAlchemy engine."""
 
     env_path = Path(__file__).resolve().parents[2] / ".env"
-    load_dotenv(dotenv_path=env_path, override=True)
+    load_dotenv(dotenv_path=env_path, override=False)
 
     user = os.getenv("POSTGRES_USER")
     password = os.getenv("POSTGRES_PASSWORD")
@@ -23,13 +23,5 @@ def get_postgres_engine():
     connection_url = (
         f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}"
     )
-
-    print("=" * 50)
-    print("ENV FILE:", env_path)
-    print("USER:", user)
-    print("HOST:", host)
-    print("PORT:", port)
-    print("DATABASE:", database)
-    print("=" * 50)
 
     return create_engine(connection_url)
