@@ -1,6 +1,6 @@
 # Hospitality Procurement & Cost Monitoring Pipeline
 
-Python | Pandas | SQLite | YAML | Pytest
+Python | Pandas | PostgreSQL | SQLAlchemy | Docker | Docker Compose | YAML | Pytest
 
 An end-to-end **data engineering pipeline** that simulates how a hospitality business can monitor supplier pricing, track historical price changes, and automatically generate alerts when unusual price increases occur.
 
@@ -37,7 +37,9 @@ This project demonstrates core **data engineering concepts** including:
 
 - raw data generation and ingestion
 - schema validation and data cleaning
-- SQLite-based data storage
+- PostgreSQL-based data storage
+- Dockerized pipeline deployment
+- Containerized development environment
 - transformation into analytics-ready tables
 - automated monitoring logic for price increases
 - configuration-driven pipeline behavior
@@ -47,13 +49,19 @@ This project demonstrates core **data engineering concepts** including:
 
 # Tech Stack
 
-- **Python**
-- **Pandas**
-- **SQLite**
-- **YAML (configuration)**
-- **Pytest**
+- Python
+- Pandas
+- PostgreSQL
+- SQLAlchemy
+- Docker
+- Docker Compose
+- YAML Configuration
+- Pytest
+- Git & GitHub
 
 ---
+
+# Project Structure
 
 # Project Structure
 
@@ -65,9 +73,6 @@ hospitality-procurement-monitoring-pipeline/
 │   │   └── supplier_invoices.csv
 │   └── processed/
 │
-├── db/
-│   └── procurement.db
-│
 ├── outputs/
 │   └── price_alerts.csv
 │
@@ -77,19 +82,29 @@ hospitality-procurement-monitoring-pipeline/
 ├── src/
 │   ├── config/
 │   │   └── settings.yaml
+│   │
+│   ├── database/
+│   │   └── postgres_connection.py
+│   │
 │   ├── ingestion/
 │   │   ├── generate_invoices.py
 │   │   └── load_invoices.py
-│   ├── monitoring/
-│   │   └── detect_price_alerts.py
+│   │
 │   ├── transform/
 │   │   └── build_price_history.py
+│   │
+│   ├── monitoring/
+│   │   └── detect_price_alerts.py
+│   │
 │   └── utils/
 │       └── helpers.py
 │
 ├── tests/
 │   └── test_pipeline.py
 │
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -106,19 +121,22 @@ Raw CSV Generation
 Ingestion + Cleaning
         │
         ▼
-SQLite Raw Table (raw_invoices)
+PostgreSQL (raw_invoices)
         │
         ▼
 Transformation Layer
         │
         ▼
-SQLite Analytics Table (price_history)
+PostgreSQL (price_history)
         │
         ▼
 Monitoring Logic
         │
         ▼
-Alerts Table + CSV Export (price_alerts)
+PostgreSQL (price_alerts)
+        │
+        ▼
+CSV Export
 
 ---
 
@@ -160,7 +178,7 @@ These issues are automatically handled during the ingestion and cleaning stage.
 # Tables Created
 
 ### `raw_invoices`
-Cleaned invoice data stored in SQLite.
+Cleaned invoice data stored in PostgreSQL.
 
 ### `price_history`
 A transformed analytics table containing:
@@ -216,6 +234,18 @@ If using a specific interpreter:
 "C:\path\to\python.exe" pipeline/run_pipeline.py
 ```
 
+### 2. Run with Docker
+
+```
+docker compose up
+```
+1. Start a PostgreSQL container
+2. Wait for the database to become healthy
+3. Execute the procurement monitoring pipeline
+4. Load data into PostgreSQL
+5. Generate procurement alerts
+6. Export alerts to CSV
+
 # Pipeline Steps
 
 The pipeline executes the following stages:
@@ -249,40 +279,66 @@ The pipeline executes the following stages:
 
 After running the pipeline, the following artifacts are created:
 
-db/procurement.db
+PostgreSQL Tables
 
-outputs/price_alerts.csv
+- raw_invoices
+- price_history
+- price_alerts
+
+CSV Output
+
+- outputs/price_alerts.csv
 
 # Example Results
 
 For the current dataset:
 
 - 521 raw rows generated
-- 519 clean rows loaded into SQLite
+- 519 clean rows loaded into PostgreSQL
 - 112 price alerts detected above the 5% threshold
 
 # Skills Demonstrated
 
 This project demonstrates:
 
-- ETL pipeline design
-- schema validation
-- data cleaning
-- SQL-based storage
-- transformation logic
-- monitoring and alert generation
-- configuration-driven pipelines
-- production-style project structuring
+- ETL pipeline development
+- PostgreSQL database design
+- SQLAlchemy integration
+- Data quality validation
+- Transformation pipelines
+- Automated monitoring and alerting
+- Docker containerization
+- Docker Compose orchestration
+- Configuration-driven pipelines
+- Git version control
 
 # Future Improvements
 
 Possible extensions include:
 
-- orchestration using Prefect
-- migration from SQLite to PostgreSQL
-- building a procurement monitoring dashboard
-- deploying the pipeline on Azure
-- expanding automated testing
+- Workflow orchestration with Airflow 
+- Procurement analytics dashboard
+- Azure deployment
+- Automated CI/CD pipeline
+- Data quality monitoring tests
+
+# Docker Architecture
+
+The project runs using Docker Compose and consists of two services:
+
+1. PostgreSQL Container
+   - Stores raw and transformed procurement data
+   - Hosts analytics tables and monitoring outputs
+
+2. Pipeline Container
+   - Executes the ETL pipeline
+   - Loads data into PostgreSQL
+   - Builds analytics tables
+   - Generates procurement alerts
+
+The entire environment can be reproduced with:
+
+docker compose up
 
 # Why This Project Matters
 
