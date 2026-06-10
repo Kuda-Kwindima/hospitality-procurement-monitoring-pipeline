@@ -1,6 +1,6 @@
 # Hospitality Procurement & Cost Monitoring Pipeline
 
-Python | Pandas | PostgreSQL | SQLAlchemy | Docker | Docker Compose | YAML | Pytest
+Python | Pandas | PostgreSQL | SQLAlchemy | Docker | Docker Compose | Apache Airflow | YAML | Pytest
 
 An end-to-end **data engineering pipeline** that simulates how a hospitality business can monitor supplier pricing, track historical price changes, and automatically generate alerts when unusual price increases occur.
 
@@ -39,6 +39,8 @@ This project demonstrates core **data engineering concepts** including:
 - schema validation and data cleaning
 - PostgreSQL-based data storage
 - Dockerized pipeline deployment
+- workflow orchestration using Apache Airflow
+- task dependency management and scheduling
 - Containerized development environment
 - transformation into analytics-ready tables
 - automated monitoring logic for price increases
@@ -74,6 +76,9 @@ hospitality-procurement-monitoring-pipeline/
 ├── outputs/
 │   └── price_alerts.csv
 │
+├── airflow/
+│   └── dags/
+│       └── procurement_monitoring_dag.py
 ├── pipeline/
 │   └── run_pipeline.py
 │
@@ -113,28 +118,25 @@ hospitality-procurement-monitoring-pipeline/
 Synthetic Supplier Invoice Data
         │
         ▼
-Raw CSV Generation
+Apache Airflow DAG
         │
         ▼
-Ingestion + Cleaning
+generate_invoices
         │
         ▼
-PostgreSQL (raw_invoices)
+load_invoices
         │
         ▼
-Transformation Layer
+build_price_history
         │
         ▼
-PostgreSQL (price_history)
+detect_price_alerts
         │
         ▼
-Monitoring Logic
+PostgreSQL Tables
         │
         ▼
-PostgreSQL (price_alerts)
-        │
-        ▼
-CSV Export
+Alerts CSV Output
 
 ---
 
@@ -273,6 +275,36 @@ The pipeline executes the following stages:
 - writes price_alerts
 - exports outputs/price_alerts.csv
 
+# Apache Airflow Orchestration
+
+The pipeline is orchestrated using Apache Airflow.
+
+The DAG defines four dependent tasks:
+
+1. generate_invoices
+2. load_invoices
+3. build_price_history
+4. detect_price_alerts
+
+Task dependencies:
+
+generate_invoices
+        ↓
+load_invoices
+        ↓
+build_price_history
+        ↓
+detect_price_alerts
+
+Airflow provides:
+
+- workflow orchestration
+- task dependency management
+- execution monitoring
+- task logs
+- retry capability
+- scheduling support
+
 # Outputs
 
 After running the pipeline, the following artifacts are created:
@@ -307,6 +339,10 @@ This project demonstrates:
 - Automated monitoring and alerting
 - Docker containerization
 - Docker Compose orchestration
+- Apache Airflow orchestration
+- Workflow scheduling
+- DAG design
+- Task dependency management
 - Configuration-driven pipelines
 - Git version control
 
@@ -314,11 +350,12 @@ This project demonstrates:
 
 Possible extensions include:
 
-- Workflow orchestration with Airflow 
-- Procurement analytics dashboard
-- Azure deployment
-- Automated CI/CD pipeline
-- Data quality monitoring tests
+- Procurement analytics dashboard (Power BI)
+- Azure cloud deployment
+- CI/CD automation with GitHub Actions
+- Automated data quality monitoring
+- Email or Slack alert notifications
+- Incremental loading strategy
 
 # Docker Architecture
 
@@ -337,6 +374,20 @@ The project runs using Docker Compose and consists of two services:
 The entire environment can be reproduced with:
 
 docker compose up
+
+# Screenshots
+
+## Airflow DAG
+
+![Airflow DAG](screenshots/airflow_dag.png)
+
+## Docker Environment
+
+![Docker Environment](screenshots/docker_environment.png)
+
+## Example Price Alerts
+
+![Price Alerts](screenshots/price_alerts_output.png)
 
 # Why This Project Matters
 
