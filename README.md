@@ -41,7 +41,7 @@ This project demonstrates core **data engineering concepts** including:
 - Dockerized pipeline deployment
 - workflow orchestration using Apache Airflow
 - task dependency management and scheduling
-- Containerized development environment
+- containerized development environment
 - transformation into analytics-ready tables
 - automated monitoring logic for price increases
 - configuration-driven pipeline behavior
@@ -51,12 +51,16 @@ This project demonstrates core **data engineering concepts** including:
 
 # Tech Stack
 
-Python
-Pandas
-PostgreSQL
-Docker
-Apache Airflow
-SQLAlchemy
+- Python
+- Pandas
+- PostgreSQL
+- SQLAlchemy
+- Docker
+- Docker Compose
+- Apache Airflow
+- YAML
+- Pytest
+- Git & GitHub
 
 ---
 
@@ -108,6 +112,11 @@ hospitality-procurement-monitoring-pipeline/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+├── screenshots/
+│   ├── airflow_dag.png
+│   ├── docker_environment.png
+│   └── price_alerts_output.png
+
 ```
 
 # Pipeline Architecture
@@ -211,7 +220,7 @@ monitoring:
   alert_threshold_pct: 5.0
   ```
 
-How to Run
+# How to Run
 
 ### 1. Install dependencies
 
@@ -228,10 +237,10 @@ python -m pipeline.run_pipeline
 If using a specific interpreter:
 
 ```
-"C:\path\to\python.exe" pipeline/run_pipeline.py
+"C:\path\to\python.exe" -m pipeline.run_pipeline
 ```
 
-### 2. Run with Docker
+### 3. Run with Docker
 
 ```
 docker compose up
@@ -242,6 +251,33 @@ docker compose up
 4. Load data into PostgreSQL
 5. Generate procurement alerts
 6. Export alerts to CSV
+
+### 4. Run with Airflow
+
+Start the Dockerized Airflow environment:
+
+```bash
+docker compose up
+```
+
+Then open:
+
+```text
+http://localhost:8080
+```
+
+Login:
+
+```text
+Username: admin
+Password: admin
+```
+
+Enable and trigger the DAG:
+
+```text
+hospitality_procurement_monitoring
+```
 
 # Pipeline Steps
 
@@ -356,21 +392,29 @@ Possible extensions include:
 
 # Docker Architecture
 
-The project runs using Docker Compose and consists of two services:
+The project runs using Docker Compose and includes multiple services:
 
 1. PostgreSQL Container
    - Stores raw and transformed procurement data
-   - Hosts analytics tables and monitoring outputs
+   - Hosts pipeline output tables
 
 2. Pipeline Container
-   - Executes the ETL pipeline
-   - Loads data into PostgreSQL
-   - Builds analytics tables
-   - Generates procurement alerts
+   - Runs the pipeline directly through Docker Compose
+
+3. Airflow Webserver
+   - Provides the Airflow UI for monitoring and triggering DAG runs
+
+4. Airflow Scheduler
+   - Schedules and executes DAG tasks
+
+5. Airflow Init
+   - Initializes the Airflow metadata database and admin user
 
 The entire environment can be reproduced with:
 
+```bash
 docker compose up
+```
 
 # Screenshots
 
