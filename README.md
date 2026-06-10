@@ -51,15 +51,12 @@ This project demonstrates core **data engineering concepts** including:
 
 # Tech Stack
 
-- Python
-- Pandas
-- PostgreSQL
-- SQLAlchemy
-- Docker
-- Docker Compose
-- YAML Configuration
-- Pytest
-- Git & GitHub
+Python
+Pandas
+PostgreSQL
+Docker
+Apache Airflow
+SQLAlchemy
 
 ---
 
