@@ -89,7 +89,7 @@ def clean_invoices(df: pd.DataFrame) -> pd.DataFrame:
     return cleaned
 
 
-def load_to_sqlite(df: pd.DataFrame, db_path: Path, table_name: str = "raw_invoices") -> None:
+def load_to_sqlite(df: pd.DataFrame, db_path: Path, table_name: str = "stg_supplier_invoices") -> None:
     """Load cleaned data into SQLite."""
     db_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -101,7 +101,7 @@ def load_to_sqlite(df: pd.DataFrame, db_path: Path, table_name: str = "raw_invoi
 
 def load_to_postgres(
     df: pd.DataFrame,
-    table_name: str = "raw_invoices"
+    table_name: str = "stg_supplier_invoices"
 ) -> None:
     """Load cleaned data into PostgreSQL."""
 

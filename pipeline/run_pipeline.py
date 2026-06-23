@@ -37,7 +37,7 @@ def main():
 
     print("\nPipeline completed successfully.")
     print("Outputs created:")
-    print("- PostgreSQL tables: raw_invoices, price_history, price_alerts")
+    print("- PostgreSQL tables: stg_supplier_invoices, price_history, price_alerts")
     print("- Alerts CSV: outputs/price_alerts.csv")
 
 

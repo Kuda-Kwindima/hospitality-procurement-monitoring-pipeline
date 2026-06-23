@@ -3,8 +3,8 @@ import pandas as pd
 from src.database.postgres_connection import get_postgres_engine
 
 
-def extract_raw_invoices(table_name: str = "raw_invoices") -> pd.DataFrame:
-    """Read raw invoice data from PostgreSQL."""
+def extract_staged_invoices(table_name: str = "stg_supplier_invoices") -> pd.DataFrame:
+    """Read staged invoice data from PostgreSQL."""
     engine = get_postgres_engine()
 
     query = f"SELECT * FROM {table_name}"
@@ -59,8 +59,8 @@ def load_price_history(
 
 
 def main():
-    raw_df = extract_raw_invoices()
-    price_history_df = transform_price_history(raw_df)
+    staged_df = extract_staged_invoices()
+    price_history_df = transform_price_history(staged_df)
     load_price_history(price_history_df)
 
 
