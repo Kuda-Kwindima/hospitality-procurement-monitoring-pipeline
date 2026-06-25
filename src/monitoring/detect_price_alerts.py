@@ -1,27 +1,75 @@
-import os
 from pathlib import Path
 
-from dotenv import load_dotenv
-from sqlalchemy import create_engine
+import pandas as pd
+
+from src.database.postgres_connection import get_postgres_engine
 
 
-def get_postgres_engine():
-    """Create and return a PostgreSQL SQLAlchemy engine."""
+ALERT_THRESHOLD_PCT = 5.0
 
-    env_path = Path(__file__).resolve().parents[2] / ".env"
-    load_dotenv(dotenv_path=env_path, override=True)
 
-    user = os.getenv("POSTGRES_USER")
-    password = os.getenv("POSTGRES_PASSWORD")
-    host = os.getenv("POSTGRES_HOST")
-    port = os.getenv("POSTGRES_PORT")
-    database = os.getenv("POSTGRES_DB")
+def extract_price_history(table_name: str = "price_history") -> pd.DataFrame:
+    """Read price history data from PostgreSQL."""
+    engine = get_postgres_engine()
 
-    if not all([user, password, host, port, database]):
-        raise ValueError("Missing PostgreSQL environment variables. Check your .env file.")
+    query = f"SELECT * FROM {table_name}"
+    df = pd.read_sql(query, engine)
 
-    connection_url = (
-        f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}"
+    print(f"Extracted {len(df)} rows from PostgreSQL table '{table_name}'.")
+    return df
+
+
+def detect_price_alerts(
+    df: pd.DataFrame,
+    threshold_pct: float = ALERT_THRESHOLD_PCT,
+) -> pd.DataFrame:
+    """Detect supplier-product price increases above the threshold."""
+    alerts = df[
+        (df["pct_change"].notna())
+        & (df["pct_change"] > threshold_pct)
+    ].copy()
+
+    alerts["alert_type"] = "PRICE_INCREASE"
+    alerts["alert_threshold_pct"] = threshold_pct
+
+    print(f"Detected {len(alerts)} price alerts above {threshold_pct}%.")
+    return alerts
+
+
+def load_price_alerts(
+    df: pd.DataFrame,
+    table_name: str = "price_alerts",
+) -> None:
+    """Load price alerts into PostgreSQL."""
+    engine = get_postgres_engine()
+
+    df.to_sql(
+        table_name,
+        engine,
+        if_exists="replace",
+        index=False,
     )
 
-    return create_engine(connection_url)
+    print(f"Loaded {len(df)} rows into PostgreSQL table '{table_name}'.")
+
+
+def save_alerts_csv(df: pd.DataFrame) -> None:
+    """Save price alerts as a CSV output file."""
+    project_root = Path(__file__).resolve().parents[2]
+    output_path = project_root / "outputs" / "price_alerts.csv"
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(output_path, index=False)
+
+    print(f"Saved alerts CSV to: {output_path}")
+
+
+def main():
+    price_history_df = extract_price_history()
+    alerts_df = detect_price_alerts(price_history_df)
+    load_price_alerts(alerts_df)
+    save_alerts_csv(alerts_df)
+
+
+if __name__ == "__main__":
+    main()
