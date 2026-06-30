@@ -32,7 +32,7 @@ services:
       - ./pipeline:/opt/airflow/pipeline
       - ./data:/opt/airflow/data
       - ./outputs:/opt/airflow/outputs
-      - ./requirements.txt:/opt/airflow/requirements.txt
+      - ./requirements-airflow.txt:/opt/airflow/requirements.txt
     command: >
       bash -c "pip install --no-cache-dir -r /opt/airflow/requirements.txt &&
                airflow db migrate &&
@@ -61,7 +61,7 @@ services:
       - ./pipeline:/opt/airflow/pipeline
       - ./data:/opt/airflow/data
       - ./outputs:/opt/airflow/outputs
-      - ./requirements.txt:/opt/airflow/requirements.txt
+      - ./requirements-airflow.txt:/opt/airflow/requirements.txt
     command: >
       bash -c "pip install --no-cache-dir -r /opt/airflow/requirements.txt &&
                airflow webserver"
@@ -87,7 +87,7 @@ services:
       - ./pipeline:/opt/airflow/pipeline
       - ./data:/opt/airflow/data
       - ./outputs:/opt/airflow/outputs
-      - ./requirements.txt:/opt/airflow/requirements.txt
+      - ./requirements-airflow.txt:/opt/airflow/requirements.txt
     command: >
       bash -c "pip install --no-cache-dir -r /opt/airflow/requirements.txt &&
                airflow scheduler"

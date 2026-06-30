@@ -2,265 +2,290 @@
 
 Python | Pandas | PostgreSQL | SQLAlchemy | Docker | Docker Compose | Apache Airflow | YAML | Pytest
 
-An end-to-end **data engineering pipeline** that simulates how a hospitality business can monitor supplier pricing, track historical price changes, and automatically generate alerts when unusual price increases occur.
+An end-to-end data engineering pipeline that simulates how a hospitality business can monitor supplier pricing, track historical price changes, and generate alerts when supplier-product prices increase above a defined threshold.
 
-The project models a realistic hotel or restaurant procurement workflow where supplier invoices are **ingested, cleaned, transformed, and analyzed** to detect cost anomalies that could impact operational margins.
-
----
-
-# Business Problem
-
-Hospitality businesses rely on multiple suppliers for products such as:
-
-- vegetables
-- meat
-- seafood
-- dairy
-- beverages
-
-Over time, supplier prices can change gradually or spike unexpectedly.
-
-Without a monitoring system, these changes may go unnoticed and lead to:
-
-- rising food and beverage costs
-- procurement inefficiencies
-- weaker supplier negotiation leverage
-- reduced operating margins
-
-This pipeline demonstrates how a simple **data engineering system** can detect these changes automatically.
+The project models a realistic hotel or restaurant procurement workflow where supplier invoices are generated, ingested, cleaned, transformed, stored in PostgreSQL, and monitored for cost anomalies that could affect operating margins.
 
 ---
 
-# Project Goals
+## Business Problem
 
-This project demonstrates core **data engineering concepts** including:
+Hospitality businesses rely on multiple suppliers for products such as vegetables, meat, seafood, dairy, and beverages.
 
-- raw data generation and ingestion
-- schema validation and data cleaning
-- PostgreSQL-based data storage
-- Dockerized pipeline deployment
-- workflow orchestration using Apache Airflow
-- task dependency management and scheduling
-- containerized development environment
-- transformation into analytics-ready tables
-- automated monitoring logic for price increases
-- configuration-driven pipeline behavior
-- end-to-end pipeline execution from a single runner script
+Over time, supplier prices may change gradually or spike unexpectedly. Without a monitoring system, these changes can go unnoticed and lead to:
+
+* rising food and beverage costs
+* weaker supplier negotiation control
+* procurement inefficiencies
+* reduced operating margins
+
+This pipeline demonstrates how a data engineering system can help detect supplier price increases automatically.
 
 ---
 
-# Tech Stack
+## Project Goals
 
-- Python
-- Pandas
-- PostgreSQL
-- SQLAlchemy
-- Docker
-- Docker Compose
-- Apache Airflow
-- YAML
-- Pytest
-- Git & GitHub
+This project demonstrates core data engineering concepts, including:
+
+* raw data generation and ingestion
+* schema validation and data cleaning
+* PostgreSQL-based data storage
+* Dockerized database and orchestration services
+* Apache Airflow DAG orchestration
+* task dependency management
+* transformation into analytics-ready tables
+* automated monitoring logic for price increases
+* local pipeline execution through a runner script
+* unit testing with Pytest
+* environment-based database configuration
 
 ---
 
-# Project Structure
+## Tech Stack
+
+* Python
+* Pandas
+* PostgreSQL
+* SQLAlchemy
+* Docker
+* Docker Compose
+* Apache Airflow
+* YAML
+* Pytest
+* Git and GitHub
+
+---
+
+## Project Structure
 
 ```text
 hospitality-procurement-monitoring-pipeline/
-│
-├── data/
-│   ├── raw/
-│   │   └── supplier_invoices.csv
-│   └── processed/
-│
-├── outputs/
-│   └── price_alerts.csv
-│
-├── airflow/
-│   └── dags/
-│       └── procurement_monitoring_dag.py
-├── pipeline/
-│   └── run_pipeline.py
-│
-├── src/
-│   ├── config/
-│   │   └── settings.yaml
-│   │
-│   ├── database/
-│   │   └── postgres_connection.py
-│   │
-│   ├── ingestion/
-│   │   ├── generate_invoices.py
-│   │   └── load_invoices.py
-│   │
-│   ├── transform/
-│   │   └── build_price_history.py
-│   │
-│   ├── monitoring/
-│   │   └── detect_price_alerts.py
-│   │
-│   └── utils/
-│       └── helpers.py
-│
-├── tests/
-│   └── test_pipeline.py
-│
-├── Dockerfile
-├── docker-compose.yml
-├── .dockerignore
-├── requirements.txt
-├── .gitignore
-└── README.md
-├── screenshots/
-│   ├── airflow_dag.png
-│   ├── docker_environment.png
-│   └── price_alerts_output.png
-
+|
+|-- airflow/
+|   |-- dags/
+|       |-- procurement_monitoring_dag.py
+|
+|-- data/
+|   |-- raw/
+|       |-- supplier_invoices.csv
+|
+|-- outputs/
+|   |-- price_alerts.csv
+|
+|-- pipeline/
+|   |-- run_pipeline.py
+|
+|-- src/
+|   |-- config/
+|   |   |-- settings.yaml
+|   |
+|   |-- database/
+|   |   |-- postgres_connection.py
+|   |
+|   |-- ingestion/
+|   |   |-- generate_invoices.py
+|   |   |-- load_invoices.py
+|   |
+|   |-- transform/
+|   |   |-- build_price_history.py
+|   |
+|   |-- monitoring/
+|       |-- detect_price_alerts.py
+|
+|-- tests/
+|   |-- test_pipeline.py
+|
+|-- .dockerignore
+|-- .env.example
+|-- .gitignore
+|-- docker-compose.yml
+|-- Dockerfile
+|-- pytest.ini
+|-- README.md
+|-- requirements.txt
+|-- requirements-airflow.txt
 ```
-
-# Pipeline Architecture
-
-Synthetic Supplier Invoice Data
-        │
-        ▼
-Apache Airflow DAG
-        │
-        ▼
-generate_invoices
-        │
-        ▼
-load_invoices
-        │
-        ▼
-build_price_history
-        │
-        ▼
-detect_price_alerts
-        │
-        ▼
-PostgreSQL Tables
-        │
-        ▼
-Alerts CSV Output
 
 ---
 
-# Dataset
+## Pipeline Architecture
 
-The project uses a **synthetic but realistic hospitality procurement dataset** containing:
+```text
+Synthetic supplier invoice data
+        |
+        v
+generate_invoices.py
+        |
+        v
+load_invoices.py
+        |
+        v
+PostgreSQL: stg_supplier_invoices
+        |
+        v
+build_price_history.py
+        |
+        v
+PostgreSQL: price_history
+        |
+        v
+detect_price_alerts.py
+        |
+        v
+PostgreSQL: price_alerts
+        |
+        v
+outputs/price_alerts.csv
+```
 
-- **5 suppliers**
-- **20 hospitality-related products**
-- **weekly invoice records**
-- **changing supplier prices over time**
-- **intentionally injected data quality issues**
+The pipeline can be executed in two ways:
+
+1. Locally using `pipeline/run_pipeline.py`
+2. Through Apache Airflow using the DAG in `airflow/dags/procurement_monitoring_dag.py`
+
+---
+
+## Dataset
+
+The project uses a synthetic but realistic hospitality procurement dataset containing:
+
+* 5 suppliers
+* 20 hospitality-related products
+* weekly invoice records
+* changing supplier prices over time
+* intentionally injected data quality issues
 
 Example columns:
 
-- `invoice_id`
-- `invoice_date`
-- `supplier`
-- `product`
-- `category`
-- `quantity`
-- `unit_price`
-- `total_amount`
+* `invoice_id`
+* `invoice_date`
+* `supplier`
+* `product`
+* `category`
+* `quantity`
+* `unit_price`
+* `total_amount`
 
 ---
 
-# Example Data Quality Issues
+## Example Data Quality Issues
 
 To simulate real operational data challenges, the dataset includes:
 
-- one missing unit price  
-- one supplier naming inconsistency  
-- one duplicate row  
+* one missing unit price
+* one supplier naming inconsistency
+* one duplicate row
 
-These issues are automatically handled during the ingestion and cleaning stage.
+These issues are handled during the ingestion and cleaning stage.
 
 ---
 
-# Tables Created
+## Tables Created
 
-### `raw_invoices`
-Cleaned invoice data stored in PostgreSQL.
+### `stg_supplier_invoices`
+
+Cleaned and standardized supplier invoice data loaded into PostgreSQL as the staging table.
 
 ### `price_history`
-A transformed analytics table containing:
 
-- previous price  
-- price change  
-- percentage price change  
+A transformed table containing historical supplier-product price movement, including:
+
+* previous price
+* price change
+* percentage price change
 
 ### `price_alerts`
-Rows where the percentage price increase exceeds the configured alert threshold.
+
+A business monitoring output table containing supplier-product records where the percentage price increase exceeds the configured threshold.
 
 ---
 
-# Configuration
+## Configuration
 
-Pipeline configuration is stored in:
+Database connection values are managed through environment variables.
 
-```
-src/config/settings.yaml
-```
+Create a local `.env` file using `.env.example` as a template:
 
-This controls:
-
-- dataset date range  
-- database path  
-- output CSV path  
-- alert threshold  
-
-Example:
-
-```yaml
-monitoring:
-  alert_threshold_pct: 5.0
-  ```
-
-# How to Run
-
-### 1. Install dependencies
-
-```
-python -m pip install -r requirements.txt
+```env
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5433
+POSTGRES_DB=procurement_db
 ```
 
-### 2. Run the pipeline
+Important:
 
+* `.env` is local and should not be committed.
+* `.env.example` is safe to commit because it documents the required variables.
+* Local Python connects to PostgreSQL through `localhost:5433`.
+* Airflow containers connect to PostgreSQL through `postgres:5432`.
+
+The project also includes `src/config/settings.yaml` for pipeline reference settings such as dataset dates, alert threshold, and output path. Some runtime database values are managed through `.env` and Docker Compose.
+
+---
+
+## How to Run Locally
+
+### 1. Create and activate a virtual environment
+
+```bash
+python -m venv .venv
 ```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Start PostgreSQL with Docker Compose
+
+```bash
+docker compose up -d postgres
+```
+
+### 4. Create `.env`
+
+Copy `.env.example` to `.env` and confirm the values match your local Docker Compose setup.
+
+### 5. Run the pipeline
+
+```bash
 python -m pipeline.run_pipeline
 ```
 
-If using a specific interpreter:
+Expected outputs:
 
-```
-"C:\path\to\python.exe" -m pipeline.run_pipeline
-```
+* PostgreSQL table: `stg_supplier_invoices`
+* PostgreSQL table: `price_history`
+* PostgreSQL table: `price_alerts`
+* CSV output: `outputs/price_alerts.csv`
 
-### 3. Run with Docker
+---
 
-```
-docker compose up
-```
-1. Start a PostgreSQL container
-2. Wait for the database to become healthy
-3. Execute the procurement monitoring pipeline
-4. Load data into PostgreSQL
-5. Generate procurement alerts
-6. Export alerts to CSV
+## How to Run with Airflow
 
-### 4. Run with Airflow
-
-Start the Dockerized Airflow environment:
+Start the full Docker Compose environment:
 
 ```bash
-docker compose up
+docker compose up -d
 ```
 
-Then open:
+This starts:
+
+* PostgreSQL
+* Airflow init
+* Airflow webserver
+* Airflow scheduler
+
+Open Airflow:
 
 ```text
 http://localhost:8080
@@ -273,163 +298,251 @@ Username: admin
 Password: admin
 ```
 
-Enable and trigger the DAG:
+Unpause and trigger the DAG:
 
 ```text
 hospitality_procurement_monitoring
 ```
 
-# Pipeline Steps
+The DAG runs the following tasks:
 
-The pipeline executes the following stages:
-
-### 1. generate_invoices.py
-
-- generates synthetic weekly supplier invoice data
-
-### 2. load_invoices.py
-
-- validates schema
-- standardizes supplier names
-- removes critical nulls
-- removes duplicate rows
-- loads cleaned data into PostgreSQL
-
-### 3. build_price_history.py
-
-- reads raw_invoices
-- calculates previous price, price change, and percent change
-- writes the price_history table
-
-### 4. detect_price_alerts.py
-
-- reads price_history
-- flags price increases above the configured threshold
-- writes price_alerts
-- exports outputs/price_alerts.csv
-
-# Apache Airflow Orchestration
-
-The pipeline is orchestrated using Apache Airflow.
-
-The DAG defines four dependent tasks:
-
-1. generate_invoices
-2. load_invoices
-3. build_price_history
-4. detect_price_alerts
-
-Task dependencies:
-
+```text
 generate_invoices
-        ↓
+        |
+        v
 load_invoices
-        ↓
+        |
+        v
 build_price_history
-        ↓
+        |
+        v
 detect_price_alerts
+```
+
+---
+
+## Pipeline Steps
+
+### 1. `generate_invoices.py`
+
+Generates synthetic weekly supplier invoice data and saves it to:
+
+```text
+data/raw/supplier_invoices.csv
+```
+
+### 2. `load_invoices.py`
+
+Reads the raw CSV, validates schema, cleans the data, standardizes supplier names, removes bad records, removes duplicates, recalculates totals, and loads the cleaned data into:
+
+```text
+stg_supplier_invoices
+```
+
+### 3. `build_price_history.py`
+
+Reads `stg_supplier_invoices`, calculates previous price, price change, and percentage change for each supplier-product combination, and writes:
+
+```text
+price_history
+```
+
+### 4. `detect_price_alerts.py`
+
+Reads `price_history`, filters price increases above the alert threshold, writes the alert table, and exports a CSV:
+
+```text
+price_alerts
+outputs/price_alerts.csv
+```
+
+---
+
+## Apache Airflow Orchestration
+
+The Airflow DAG is defined in:
+
+```text
+airflow/dags/procurement_monitoring_dag.py
+```
 
 Airflow provides:
 
-- workflow orchestration
-- task dependency management
-- execution monitoring
-- task logs
-- retry capability
-- scheduling support
+* workflow orchestration
+* task dependency management
+* manual triggering
+* task-level logs
+* retry capability
+* execution monitoring through the Airflow UI
 
-# Outputs
+The DAG currently uses manual triggering with:
 
-After running the pipeline, the following artifacts are created:
+```python
+schedule_interval=None
+```
 
-PostgreSQL Tables
+This means the pipeline runs when triggered from the Airflow UI, rather than on an automatic schedule.
 
-- raw_invoices
-- price_history
-- price_alerts
+---
 
-CSV Output
+## Docker Architecture
 
-- outputs/price_alerts.csv
+The project uses Docker Compose for local infrastructure.
 
-# Example Results
+Services:
+
+### PostgreSQL
+
+Stores the pipeline output tables.
+
+Container name:
+
+```text
+procurement_postgres
+```
+
+Local connection:
+
+```text
+localhost:5433
+```
+
+Internal Docker connection:
+
+```text
+postgres:5432
+```
+
+### Airflow Init
+
+Initializes the Airflow metadata database and creates the admin user.
+
+### Airflow Webserver
+
+Provides the Airflow browser UI on:
+
+```text
+http://localhost:8080
+```
+
+### Airflow Scheduler
+
+Monitors DAGs and triggers task execution.
+
+Note: The Python pipeline is currently run locally through the virtual environment or orchestrated through Airflow tasks. The Dockerfile provides a base for containerizing the Python pipeline, but the current Docker Compose file does not define a separate pipeline container.
+
+---
+
+## Verify PostgreSQL Output
+
+Enter the PostgreSQL container:
+
+```bash
+docker exec -it procurement_postgres psql -U postgres -d procurement_db
+```
+
+List tables:
+
+```sql
+\dt
+```
+
+Check row counts:
+
+```sql
+SELECT COUNT(*) FROM stg_supplier_invoices;
+SELECT COUNT(*) FROM price_history;
+SELECT COUNT(*) FROM price_alerts;
+```
+
+Expected result for the current dataset:
+
+```text
+stg_supplier_invoices: 519 rows
+price_history: 519 rows
+price_alerts: 112 rows
+```
+
+Exit PostgreSQL:
+
+```sql
+\q
+```
+
+---
+
+## Testing
+
+Run tests with:
+
+```bash
+pytest
+```
+
+The current test validates the core price history transformation logic, including:
+
+* creation of `previous_price`
+* creation of `price_change`
+* creation of `pct_change`
+* correct calculation of percentage change
+
+---
+
+## Example Results
 
 For the current dataset:
 
-- 521 raw rows generated
-- 519 clean rows loaded into PostgreSQL
-- 112 price alerts detected above the 5% threshold
+* 521 raw rows generated
+* 519 clean rows loaded into PostgreSQL
+* 112 price alerts detected above the 5% threshold
 
-# Skills Demonstrated
+Example business interpretation:
+
+```text
+A supplier-product price increase above 5% is flagged for procurement review.
+```
+
+This allows a hospitality procurement team to investigate whether the increase is expected, seasonal, negotiated, or requires supplier follow-up.
+
+---
+
+## Skills Demonstrated
 
 This project demonstrates:
 
-- ETL pipeline development
-- PostgreSQL database design
-- SQLAlchemy integration
-- Data quality validation
-- Transformation pipelines
-- Automated monitoring and alerting
-- Docker containerization
-- Docker Compose orchestration
-- Apache Airflow orchestration
-- Workflow scheduling
-- DAG design
-- Task dependency management
-- Configuration-driven pipelines
-- Git version control
+* ETL pipeline development
+* data cleaning and validation
+* PostgreSQL integration
+* SQLAlchemy database connectivity
+* Docker-based local infrastructure
+* Docker Compose service orchestration
+* Apache Airflow DAG orchestration
+* task dependency management
+* unit testing with Pytest
+* environment variable management
+* Git version control
+* hospitality operations data use case design
 
-# Future Improvements
+---
+
+## Future Improvements
 
 Possible extensions include:
 
-- Procurement analytics dashboard (Power BI)
-- Azure cloud deployment
-- CI/CD automation with GitHub Actions
-- Automated data quality monitoring
-- Email or Slack alert notifications
-- Incremental loading strategy
+* read more configuration values directly from `settings.yaml`
+* add stronger tests for ingestion and alert detection
+* add a dedicated Docker Compose pipeline service
+* separate Airflow metadata database from the procurement warehouse database
+* add Power BI procurement analytics dashboard
+* add email or Slack alert notifications
+* add incremental loading strategy
+* add CI/CD automation with GitHub Actions
+* deploy to Azure or another cloud platform
 
-# Docker Architecture
+---
 
-The project runs using Docker Compose and includes multiple services:
+## Why This Project Matters
 
-1. PostgreSQL Container
-   - Stores raw and transformed procurement data
-   - Hosts pipeline output tables
+This project focuses on a hospitality operations use case rather than a generic dataset. It combines domain relevance with data engineering structure to demonstrate practical pipeline design for real operational workflows.
 
-2. Pipeline Container
-   - Runs the pipeline directly through Docker Compose
-
-3. Airflow Webserver
-   - Provides the Airflow UI for monitoring and triggering DAG runs
-
-4. Airflow Scheduler
-   - Schedules and executes DAG tasks
-
-5. Airflow Init
-   - Initializes the Airflow metadata database and admin user
-
-The entire environment can be reproduced with:
-
-```bash
-docker compose up
-```
-
-# Screenshots
-
-## Airflow DAG
-
-![Airflow DAG](screenshots/airflow_dag.png)
-
-## Docker Environment
-
-![Docker Environment](screenshots/docker_environment.png)
-
-## Example Price Alerts
-
-![Price Alerts](screenshots/price_alerts_output.png)
-
-# Why This Project Matters
-
-This project intentionally focuses on a hospitality operations use case rather than a generic dataset. It combines domain relevance with data engineering structure to demonstrate practical pipeline design for real operational workflows.
+It shows how supplier invoice data can be transformed into procurement monitoring outputs that support cost control, supplier review, and operational decision-making.

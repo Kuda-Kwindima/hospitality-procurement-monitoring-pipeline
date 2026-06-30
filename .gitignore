@@ -1,3 +1,4 @@
+@'
 __pycache__/
 *.pyc
 .venv/
@@ -7,3 +8,8 @@ db/*.db
 outputs/*.csv
 data/processed/*
 .pytest_cache/
+Thumbs.db
+*.log
+airflow/logs/
+.DS_Store
+'@ | Set-Content -Encoding UTF8 .gitignore
